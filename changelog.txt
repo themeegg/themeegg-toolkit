@@ -1,0 +1,24 @@
+### 1.0.2 - 10/25/2016
+
+Changes:
+
+- Removed dependencies on 3rd party plugin
+- Renamed classes for HM files
+- Added license and copyright information to readme.txt file
+- Updated the plugin description
+
+
+### 1.0.1 - 10/15/2016
+
+Changes:
+
+- Updated text strings
+- Updated styles (UI)
+- Removed unnecessary code
+
+
+### 1.0.0 - 10/10/2016
+
+Changes:
+
+*INITIAL RELEASE*
