@@ -13,8 +13,9 @@ Text Domain: themeegg-toolkit
 */
 
 // Block direct access to the main plugin file.
-defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
-
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 /**
  * Display admin error message if PHP version is older than 5.3.2.
  * Otherwise execute the main plugin class.
