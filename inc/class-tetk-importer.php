@@ -1,10 +1,10 @@
 <?php
+
 /**
  * Class for declaring the importer used in the Theme Demo Import plugin
  *
  * @package tetk
  */
-
 class TETK_Importer {
 
 	private $importer;
@@ -28,8 +28,11 @@ class TETK_Importer {
 	 * Include required files.
 	 */
 	private function include_required_files() {
+
 		defined( 'WP_LOAD_IMPORTERS' ) || define( 'WP_LOAD_IMPORTERS', true );
-		require ABSPATH . '/wp-admin/includes/class-wp-importer.php';
+		if ( ! class_exists( 'WP_Importer' ) ) {
+			require ABSPATH . '/wp-admin/includes/class-wp-importer.php';
+		}
 		require TETK_PATH . 'inc/class-tetk-wxr-importer.php';
 	}
 
