@@ -6,8 +6,13 @@
  */
 
 // Include files.
-require TETK_PATH . 'inc/importer/class-logger.php';
-require TETK_PATH . 'inc/importer/class-logger-cli.php';
+if ( ! class_exists( 'HM_WP_Importer_Logger' ) ) {
+	require TETK_PATH . 'inc/importer/class-logger.php';
+}
+if ( ! class_exists( 'HM_WP_Importer_Logger_CLI' ) ) {
+	require TETK_PATH . 'inc/importer/class-logger-cli.php';
+}
+
 
 class TETK_Logger extends HM_WP_Importer_Logger_CLI {
 
@@ -21,9 +26,9 @@ class TETK_Logger extends HM_WP_Importer_Logger_CLI {
 	 *
 	 * Logs with an arbitrary level.
 	 *
-	 * @param mixed  $level level of reporting.
+	 * @param mixed $level level of reporting.
 	 * @param string $message log message.
-	 * @param array  $context context to the log message.
+	 * @param array $context context to the log message.
 	 */
 	public function log( $level, $message, array $context = array() ) {
 
@@ -46,9 +51,9 @@ class TETK_Logger extends HM_WP_Importer_Logger_CLI {
 	 * Save messages for error output.
 	 * Only the messages greater then Error.
 	 *
-	 * @param mixed  $level level of reporting.
+	 * @param mixed $level level of reporting.
 	 * @param string $message log message.
-	 * @param array  $context context to the log message.
+	 * @param array $context context to the log message.
 	 */
 	public function error_output( $level, $message, array $context = array() ) {
 		if ( $this->level_to_numeric( $level ) < $this->level_to_numeric( 'error' ) ) {
