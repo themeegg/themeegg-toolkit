@@ -662,7 +662,7 @@ class TETK_HM_WXR_Importer {
 						// Bail now
 						return new WP_Error(
 							'wxr_importer.post.cannot_import_draft',
-							__( 'Cannot import auto-draft posts' ),
+							__( 'Cannot import auto-draft posts', 'themeegg-toolkit' ),
 							$data
 						);
 					}
@@ -838,7 +838,7 @@ class TETK_HM_WXR_Importer {
 		if ( 'attachment' === $postdata['post_type'] ) {
 			if ( ! $this->options['fetch_attachments'] ) {
 				$this->logger->notice( sprintf(
-					__( 'Skipping attachment "%s", fetching attachments disabled' ),
+					__( 'Skipping attachment "%s", fetching attachments disabled', 'themeegg-toolkit' ),
 					$data['post_title']
 				) );
 				return false;
