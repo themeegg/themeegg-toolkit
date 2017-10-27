@@ -6,15 +6,15 @@
  */
 
 // Include files.
-if ( ! class_exists( 'HM_WP_Importer_Logger' ) ) {
+if ( ! class_exists( 'TETK_WP_Importer_Logger' ) ) {
 	require TETK_PATH . 'inc/importer/class-logger.php';
 }
-if ( ! class_exists( 'HM_WP_Importer_Logger_CLI' ) ) {
+if ( ! class_exists( 'TETK_WP_Importer_Logger_CLI' ) ) {
 	require TETK_PATH . 'inc/importer/class-logger-cli.php';
 }
 
 
-class TETK_Logger extends HM_WP_Importer_Logger_CLI {
+class TETK_Logger extends TETK_WP_Importer_Logger_CLI {
 
 	/**
 	 * Variable for front-end error display.
@@ -22,7 +22,7 @@ class TETK_Logger extends HM_WP_Importer_Logger_CLI {
 	public $error_output = '';
 
 	/**
-	 * Overwritten log function from HM_WP_Importer_Logger_CLI.
+	 * Overwritten log function from TETK_WP_Importer_Logger_CLI.
 	 *
 	 * Logs with an arbitrary level.
 	 *

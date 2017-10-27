@@ -59,7 +59,7 @@ class HM_WXR_Importer {
 	/**
 	 * Logger instance.
 	 *
-	 * @var HM_WP_Importer_Logger
+	 * @var TETK_WP_Importer_Logger
 	 */
 	protected $logger;
 

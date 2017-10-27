@@ -1,6 +1,6 @@
 <?php
 
-class HM_WP_Importer_Logger_CLI extends HM_WP_Importer_Logger {
+class TETK_WP_Importer_Logger_CLI extends TETK_WP_Importer_Logger {
 	public $min_level = 'notice';
 
 	/**
