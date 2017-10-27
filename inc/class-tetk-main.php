@@ -658,7 +658,7 @@ class TETK_Demo_Import {
 	 * Load the plugin textdomain, so that translations can be made.
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'themeegg-toolkit', false, plugin_basename( dirname( __FILE__ ) ) . '/languages' );
+		load_plugin_textdomain( 'themeegg-toolkit', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 	}
 
 
