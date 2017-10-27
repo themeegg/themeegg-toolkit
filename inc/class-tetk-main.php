@@ -15,7 +15,7 @@ require TETK_PATH . 'inc/class-tetk-logger.php';
 /**
  * Theme Demo Import class, so we don't have to worry about namespaces.
  */
-class TETK_Demo_Import {
+class Theme_Demo_Import {
 
 	/**
 	 * @var $instance the reference to *Singleton* instance of this class
@@ -31,7 +31,7 @@ class TETK_Demo_Import {
 	/**
 	 * Returns the *Singleton* instance of this class.
 	 *
-	 * @return TETK_Demo_Import the *Singleton* instance.
+	 * @return Theme_Demo_Import the *Singleton* instance.
 	 */
 	public static function getInstance() {
 		if ( null === static::$instance ) {

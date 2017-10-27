@@ -13,9 +13,8 @@ Text Domain: themeegg-toolkit
 */
 
 // Block direct access to the main plugin file.
-if ( ! defined( 'ABSPATH' ) ) {
-	exit; // Exit if accessed directly.
-}
+defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
+
 /**
  * Display admin error message if PHP version is older than 5.3.2.
  * Otherwise execute the main plugin class.
@@ -47,5 +46,5 @@ else {
 	require TETK_PATH . 'inc/class-tetk-main.php';
 
 	// Instantiate the main plugin class *Singleton*.
-	$TETK_Demo_Import = TETK_Demo_Import::getInstance();
+	$Theme_Demo_Import = Theme_Demo_Import::getInstance();
 }

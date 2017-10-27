@@ -1,6 +1,6 @@
 <?php
 
-class TETK_WXR_Importer {
+class TETK_HM_WXR_Importer {
 	/**
 	 * Maximum supported WXR version
 	 */

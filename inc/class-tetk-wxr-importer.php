@@ -1,7 +1,7 @@
 <?php
 /**
  * WXR importer class used in the Theme Demo Import plugin.
- * Needed to extend the TETK_WXR_Importer class to get/set the importer protected variables,
+ * Needed to extend the TETK_HM_WXR_Importer class to get/set the importer protected variables,
  * for use in the multiple AJAX calls.
  *
  * @package tetk
@@ -10,7 +10,7 @@
 // Include files.
 require TETK_PATH . 'inc/importer/class-wxr-importer.php';
 
-class TETK_WXR_Importer extends TETK_WXR_Importer {
+class TETK_WXR_Importer extends TETK_HM_WXR_Importer {
 
 	public function __construct( $options = array() ) {
 		parent::__construct( $options );
@@ -22,7 +22,7 @@ class TETK_WXR_Importer extends TETK_WXR_Importer {
 	}
 
 	/**
-	 * Get all protected variables from the TETK_WXR_Importer needed for continuing the import.
+	 * Get all protected variables from the TETK_HM_WXR_Importer needed for continuing the import.
 	 */
 	public function get_importer_data() {
 		return array(
@@ -36,7 +36,7 @@ class TETK_WXR_Importer extends TETK_WXR_Importer {
 	}
 
 	/**
-	 * Sets all protected variables from the TETK_WXR_Importer needed for continuing the import.
+	 * Sets all protected variables from the TETK_HM_WXR_Importer needed for continuing the import.
 	 *
 	 * @param array $data with set variables.
 	 */

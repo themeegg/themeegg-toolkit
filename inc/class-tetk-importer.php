@@ -52,14 +52,14 @@ class TETK_Importer {
 	}
 
 	/**
-	 * Get all protected variables from the TETK_WXR_Importer needed for continuing the import.
+	 * Get all protected variables from the TETK_HM_WXR_Importer needed for continuing the import.
 	 */
 	public function get_importer_data() {
 		return $this->importer->get_importer_data();
 	}
 
 	/**
-	 * Sets all protected variables from the TETK_WXR_Importer needed for continuing the import.
+	 * Sets all protected variables from the TETK_HM_WXR_Importer needed for continuing the import.
 	 *
 	 * @param array $data with set variables.
 	 */
