@@ -4,9 +4,9 @@ function TETK_import_files() {
 	return array(
 		array(
 			'import_file_name'           => 'EggNews',
-			'import_file_url'            => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/content.xml',
-			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/widgets.wie',
-			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/customizer.dat',
+			'import_file_url'            => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/content.xml',
+			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/widgets.wie',
+			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/customizer.dat',
 			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/screenshot.png',
 			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 		),
