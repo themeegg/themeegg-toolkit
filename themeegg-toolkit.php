@@ -47,5 +47,5 @@ else {
 	require TETK_PATH . 'inc/class-tetk-main.php';
 
 	// Instantiate the main plugin class *Singleton*.
-	$Theme_Demo_Import = Theme_Demo_Import::getInstance();
+	$TETK_Demo_Import = TETK_Demo_Import::getInstance();
 }
