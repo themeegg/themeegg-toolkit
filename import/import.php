@@ -10,6 +10,14 @@ function TETK_import_files() {
 			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/screenshot.png',
 			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 		),
+		array(
+			'import_file_name'           => 'EggNews Pro',
+			'import_file_url'            => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/content.xml',
+			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/widgets.wie',
+			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/customizer.dat',
+			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/screenshot.png',
+			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
+		),
 	);
 }
 
@@ -32,8 +40,9 @@ function TETK_after_import_setup() {
 
 }
 
-$theme = wp_get_theme(); // gets the current theme
-if ( 'Eggnews' == $theme ) {
+$theme            = wp_get_theme(); // gets the current theme
+$supported_themes = array( 'Eggnews', 'Eggnews Pro' );
+if ( in_array( $theme, $supported_themes ) ) {
 	add_action( 'tetk-demo-content-import', 'TETK_import_files' );
 	add_action( 'tetk-after-demo-content-import', 'TETK_after_import_setup' );
 
