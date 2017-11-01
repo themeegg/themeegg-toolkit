@@ -4,7 +4,7 @@
 Plugin Name: ThemeEgg ToolKit
 Plugin URI: https://wordpress.org/plugins/themeegg-toolkit/
 Description: ToolKit for ThemeEgg themes and demo content importer for themes.
-Version: 1.0.0
+Version: 1.1.0
 Author: ThemeEgg
 Author URI: http://themeegg.com
 License: GPL3
@@ -30,12 +30,12 @@ if ( version_compare( phpversion(), '5.3.2', '<' ) ) {
 
 		printf( '<div class="notice notice-error"><p>%1$s</p></div>', wp_kses_post( $message ) );
 	}
+
 	add_action( 'admin_notices', 'TETK_old_php_admin_error_notice' );
-}
-else {
+} else {
 
 	// Current version of the plugin.
-	define( 'TETK_VERSION', '1.0.2' );
+	define( 'TETK_VERSION', '1.1.0' );
 
 	// Path/URL to root of this plugin, with trailing slash.
 	define( 'TETK_PATH', plugin_dir_path( __FILE__ ) );
