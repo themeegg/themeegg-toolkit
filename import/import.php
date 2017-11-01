@@ -31,16 +31,7 @@ function TETK_import_files() {
 			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/widgets.wie',
 			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/customizer.dat',
 			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/screenshot.png',
-			'demo_url'                   => 'http://demo.themeegg.com/themes/eggnews/',
-			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
-		);
-		$demo_urls[] = array(
-			'import_file_name'           => 'EggNews Pro 1',
-			'import_file_url'            => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/content.xml',
-			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/widgets.wie',
-			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/customizer.dat',
-			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/screenshot.png',
-			'demo_url'                   => 'http://demo.themeegg.com/themes/eggnews/',
+			'demo_url'                   => 'http://demo.themeegg.com/themes/eggnews-pro/',
 			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 		);
 	}
