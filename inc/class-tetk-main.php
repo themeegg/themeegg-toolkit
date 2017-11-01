@@ -234,11 +234,14 @@ class TETK_Demo_Import {
 
                                         <div class="theme-actions">
 
-                                            <a class="button button-primary load-customize hide-if-no-customize">Import
+                                            <a class="button button-primary load-customize hide-if-no-customize js-tetk-import-data"
+                                               data-index="<?php echo $index; ?>">
+                                               Import
                                                 Demo</a>
 
                                         </div>
                                     </div>
+
                                 </div>
 
 							<?php endforeach; ?>
@@ -343,13 +346,6 @@ class TETK_Demo_Import {
 	 * 6. after import setup (optional)
 	 */
 	public function import_demo_data_ajax_callback() {
-		echo '<pre>';
-		print_r( $_REQUEST );
-		print_r( $_FILES );
-
-		echo '</pre>';
-
-		exit;
 		// Try to update PHP memory limit (so that it does not run out of it).
 		ini_set( 'memory_limit', apply_filters( 'themeegg-toolkit/import_memory_limit', '350M' ) );
 

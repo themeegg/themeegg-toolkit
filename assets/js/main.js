@@ -3,6 +3,12 @@ jQuery(function ($) {
 
     $('.js-tetk-import-data').on('click', function () {
 
+        var attr = $(this).attr('disabled');
+
+        if (typeof attr !== typeof undefined && attr !== false) {
+
+            return;
+        }
         // Reset response div content.
         $('.js-tetk-ajax-response').empty();
 
@@ -10,7 +16,7 @@ jQuery(function ($) {
         var data = new FormData();
         data.append('action', 'TETK_import_demo_data');
         data.append('security', tetk.ajax_nonce);
-        data.append('selected', $('#TETK__demo-import-files').val());
+        data.append('selected', $(this).attr('data-index'));//$('#TETK__demo-import-files').val());
         if ($('#TETK__content-file-upload').length) {
             data.append('content_file', $('#TETK__content-file-upload')[0].files[0]);
         }
@@ -20,13 +26,15 @@ jQuery(function ($) {
         if ($('#TETK__customizer-file-upload').length) {
             data.append('customizer_file', $('#TETK__customizer-file-upload')[0].files[0]);
         }
+        $(this).closest('.theme').attr('class', 'theme');
+        $(this).closest('.theme').find('.notice').remove();
 
         // AJAX call to import everything (content, widgets, before/after setup)
-        ajaxCall( data );
+        ajaxCall(data, $(this));
 
     });
 
-    function ajaxCall(data) {
+    function ajaxCall(data, $this) {
         $.ajax({
             method: 'POST',
             url: tetk.ajax_url,
@@ -34,7 +42,9 @@ jQuery(function ($) {
             contentType: false,
             processData: false,
             beforeSend: function () {
-                $('.js-tetk-ajax-loader').show();
+                $('.js-tetk-import-data').attr('disabled', 'disabled');
+                $this.addClass('updating-message');
+                $this.closest('.theme').addClass('focus');
             }
         })
             .done(function (response) {
@@ -43,17 +53,32 @@ jQuery(function ($) {
                     ajaxCall(data);
                 }
                 else if ('undefined' !== typeof response.message) {
-                    $('.js-tetk-ajax-response').append('<p>' + response.message + '</p>');
+                    var success = '<div class="notice update-message notice-success notice-alt"><p>' + response.message + '</p></div>';
+                    $this.closest('.theme').addClass('theme-install-success');
+                    $this.closest('.theme').append(success);
                     $('.js-tetk-ajax-loader').hide();
+                    $this.removeClass('updating-message');
+                    $this.closest('.theme').removeClass('focus');
+                    $('.js-tetk-import-data').removeAttr('disabled');
                 }
                 else {
-                    $('.js-tetk-ajax-response').append('<div class="notice  notice-error  is-dismissible"><p>' + response + '</p></div>');
+                    var error = '<div class="notice update-message notice-error notice-alt"><p>' + response + '</p></div>';
+                    $this.closest('.theme').addClass('theme-install-failed');
+                    $this.closest('.theme').append(error);
                     $('.js-tetk-ajax-loader').hide();
+                    $this.removeClass('updating-message');
+                    $this.closest('.theme').removeClass('focus');
+                    $('.js-tetk-import-data').removeAttr('disabled');
                 }
             })
             .fail(function (error) {
-                $('.js-tetk-ajax-response').append('<div class="notice  notice-error  is-dismissible"><p>Error: ' + error.statusText + ' (' + error.status + ')' + '</p></div>');
+                var error = '<div class="notice update-message notice-error notice-alt"><p>Error: ' + error.statusText + ' (' + error.status + ')' + '</p></div>';
+                $this.closest('.theme').addClass('theme-install-failed');
+                $this.closest('.theme').append(error);
                 $('.js-tetk-ajax-loader').hide();
+                $this.removeClass('updating-message');
+                $this.closest('.theme').removeClass('focus');
+                $('.js-tetk-import-data').removeAttr('disabled');
             });
     }
 
