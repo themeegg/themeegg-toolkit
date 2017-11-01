@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Class for declaring the importer used in the Theme Demo Import plugin
+ * Class for declaring the importer used in the ThemeEgg ToolKit plugin
  *
  * @package tetk
  */

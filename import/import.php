@@ -8,10 +8,9 @@ function tetk_get_supported_themes() {
 }
 
 function TETK_import_files() {
-
-	$theme = wp_get_theme(); // gets the current theme
-
+	$theme     = wp_get_theme(); // gets the current theme
 	$demo_urls = array();
+
 	if ( $theme == 'Eggnews' ) {
 
 		$demo_urls[] = array(

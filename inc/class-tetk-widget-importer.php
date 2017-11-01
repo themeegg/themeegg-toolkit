@@ -1,6 +1,6 @@
 <?php
 /**
- * Class for the widget importer used in the Theme Demo Import plugin.
+ * Class for the widget importer used in the ThemeEgg ToolKit plugin.
  *
  * Code is mostly from the Widget Importer & Exporter plugin.
  *

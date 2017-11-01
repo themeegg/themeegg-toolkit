@@ -1,6 +1,6 @@
 <?php
 /**
- * WXR importer class used in the Theme Demo Import plugin.
+ * WXR importer class used in the ThemeEgg ToolKit plugin.
  * Needed to extend the TETK_HM_WXR_Importer class to get/set the importer protected variables,
  * for use in the multiple AJAX calls.
  *

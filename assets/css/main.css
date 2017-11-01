@@ -56,14 +56,6 @@
 
 /* Plugin multi select import and Plugin file upload containers */
 
-.TETK__file-upload,
-.TETK__multi-select-import,
-.TETK__demo-import-notice:not(:empty) {
-	padding: 4%;
-	margin: 1.62em 0;
-	background-color: #ffffff;
-	border: 1px solid #e5e5e5;
-}
 
 .TETK__file-upload {
 	margin: 0;

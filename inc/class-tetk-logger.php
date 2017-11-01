@@ -1,6 +1,6 @@
 <?php
 /**
- * Logger class used in the Theme Demo Import plugin
+ * Logger class used in the ThemeEgg ToolKit plugin
  *
  * @package tetk
  */

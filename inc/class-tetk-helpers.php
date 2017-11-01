@@ -14,6 +14,7 @@ class TETK_Helpers {
 	 * Filter through the array of import files and get rid of those who do not comply.
 	 *
 	 * @param  array $import_files list of arrays with import file details.
+	 *
 	 * @return array list of filtered arrays.
 	 */
 	public static function validate_import_file_info( $import_files ) {
@@ -33,6 +34,7 @@ class TETK_Helpers {
 	 * Helper function: a simple check for valid import file format.
 	 *
 	 * @param  array $import_file_info array with import file details.
+	 *
 	 * @return boolean
 	 */
 	private static function is_import_file_info_format_correct( $import_file_info ) {
@@ -48,8 +50,9 @@ class TETK_Helpers {
 	/**
 	 * Download import files. Content .xml and widgets .wie|.json files.
 	 *
-	 * @param  array  $import_file_info array with import file details.
+	 * @param  array $import_file_info array with import file details.
 	 * @param  string $start_date string of date and time.
+	 *
 	 * @return array|WP_Error array of paths to the downloaded files or WP_Error object with error message.
 	 */
 	public static function download_import_files( $import_file_info, $start_date = '' ) {
@@ -63,8 +66,7 @@ class TETK_Helpers {
 		if ( empty( $import_file_info['import_file_url'] ) ) {
 			if ( file_exists( $import_file_info['local_import_file'] ) ) {
 				$downloaded_files['content'] = $import_file_info['local_import_file'];
-			}
-			else {
+			} else {
 				return new WP_Error(
 					'url_or_local_file_not_defined',
 					sprintf(
@@ -75,8 +77,7 @@ class TETK_Helpers {
 					)
 				);
 			}
-		}
-		else {
+		} else {
 
 			// Retrieve demo data content from the URL.
 			$demo_import_content = self::get_content_from_url( $import_file_info['import_file_url'], $import_file_info['import_file_name'] );
@@ -120,8 +121,7 @@ class TETK_Helpers {
 			if ( is_wp_error( $downloaded_files['widgets'] ) ) {
 				return $downloaded_files['widgets'];
 			}
-		}
-		else if ( ! empty( $import_file_info['local_import_widget_file'] ) ) {
+		} else if ( ! empty( $import_file_info['local_import_widget_file'] ) ) {
 			if ( file_exists( $import_file_info['local_import_widget_file'] ) ) {
 				$downloaded_files['widgets'] = $import_file_info['local_import_widget_file'];
 			}
@@ -149,8 +149,7 @@ class TETK_Helpers {
 			if ( is_wp_error( $downloaded_files['customizer'] ) ) {
 				return $downloaded_files['customizer'];
 			}
-		}
-		else if ( ! empty( $import_file_info['local_import_customizer_file'] ) ) {
+		} else if ( ! empty( $import_file_info['local_import_customizer_file'] ) ) {
 			if ( file_exists( $import_file_info['local_import_customizer_file'] ) ) {
 				$downloaded_files['customizer'] = $import_file_info['local_import_customizer_file'];
 			}
@@ -165,6 +164,7 @@ class TETK_Helpers {
 	 *
 	 * @param string $url URL to the content file.
 	 * @param string $file_name optional, name of the file (used in the error reports).
+	 *
 	 * @return string|WP_Error, content from the URL or WP_Error object with error message
 	 */
 	private static function get_content_from_url( $url, $file_name = 'Import file' ) {
@@ -218,6 +218,7 @@ class TETK_Helpers {
 	 *
 	 * @param string $content content to be saved to the file.
 	 * @param string $file_path file path where the content should be saved.
+	 *
 	 * @return string|WP_Error path to the saved file or WP_Error object with error message.
 	 */
 	public static function write_to_file( $content, $file_path ) {
@@ -254,6 +255,7 @@ class TETK_Helpers {
 	 * @param string $content content to be saved to the file.
 	 * @param string $file_path file path where the content should be saved.
 	 * @param string $separator_text separates the existing content of the file with the new content.
+	 *
 	 * @return boolean|WP_Error, path to the saved file or WP_Error object with error message.
 	 */
 	public static function append_to_file( $content, $file_path, $separator_text = '' ) {
@@ -295,6 +297,7 @@ class TETK_Helpers {
 	 * Get data from a file
 	 *
 	 * @param string $file_path file path where the content should be saved.
+	 *
 	 * @return string $data, content of the file or WP_Error object with error message.
 	 */
 	public static function data_from_file( $file_path ) {
@@ -350,8 +353,8 @@ class TETK_Helpers {
 		// Get plugin page settings.
 		$plugin_page_setup = apply_filters( 'themeegg-toolkit/plugin_page_setup', array(
 				'parent_slug' => 'themes.php',
-				'page_title'  => esc_html__( 'Theme Demo Import' , 'themeegg-toolkit' ),
-				'menu_title'  => esc_html__( 'Import Demo Data' , 'themeegg-toolkit' ),
+				'page_title'  => esc_html__( 'ThemeEgg Demo Import', 'themeegg-toolkit' ),
+				'menu_title'  => esc_html__( 'Import Demo Data', 'themeegg-toolkit' ),
 				'capability'  => 'import',
 				'menu_slug'   => 'themeegg-toolkit',
 			)
@@ -383,6 +386,7 @@ class TETK_Helpers {
 	 * Helper function: get the right format of response errors
 	 *
 	 * @param array|WP_Error $response array or WP_Error.
+	 *
 	 * @return array, with error code and error message.
 	 */
 	private static function get_error_from_response( $response ) {
@@ -391,8 +395,7 @@ class TETK_Helpers {
 		if ( is_array( $response ) ) {
 			$response_error['error_code']    = $response['response']['code'];
 			$response_error['error_message'] = $response['response']['message'];
-		}
-		else {
+		} else {
 			$response_error['error_code']    = $response->get_error_code();
 			$response_error['error_message'] = $response->get_error_message();
 		}
@@ -405,6 +408,7 @@ class TETK_Helpers {
 	 * Get log file path
 	 *
 	 * @param string $start_date date|time|timestamp to use in the log filename.
+	 *
 	 * @return string, path to the log file
 	 */
 	public static function get_log_path( $start_date = '' ) {
@@ -424,6 +428,7 @@ class TETK_Helpers {
 	 * Register file as attachment to the Media page.
 	 *
 	 * @param string $log_path log file path.
+	 *
 	 * @return void
 	 */
 	public static function register_file_as_media_attachment( $log_path ) {
@@ -436,7 +441,7 @@ class TETK_Helpers {
 		$attachment = array(
 			'guid'           => self::get_log_url( $log_path ),
 			'post_mime_type' => $filetype['type'],
-			'post_title'     => apply_filters( 'themeegg-toolkit/attachment_prefix', esc_html__( 'Theme Demo Import - ', 'themeegg-toolkit' ) ) . preg_replace( '/\.[^.]+$/', '', basename( $log_path ) ),
+			'post_title'     => apply_filters( 'themeegg-toolkit/attachment_prefix', esc_html__( 'ThemeEgg Demo Import - ', 'themeegg-toolkit' ) ) . preg_replace( '/\.[^.]+$/', '', basename( $log_path ) ),
 			'post_content'   => '',
 			'post_status'    => 'inherit',
 		);
@@ -450,6 +455,7 @@ class TETK_Helpers {
 	 * Get log file url
 	 *
 	 * @param string $log_path log path to use for the log filename.
+	 *
 	 * @return string, url to the log file.
 	 */
 	public static function get_log_url( $log_path ) {
@@ -484,8 +490,9 @@ class TETK_Helpers {
 	/**
 	 * Process uploaded files and return the paths to these files.
 	 *
-	 * @param array  $uploaded_files $_FILES array form an AJAX request.
+	 * @param array $uploaded_files $_FILES array form an AJAX request.
 	 * @param string $log_file_path path to the log file.
+	 *
 	 * @return array of paths to the content import and widget import files.
 	 */
 	public static function process_uploaded_files( $uploaded_files, $log_file_path ) {
@@ -500,9 +507,9 @@ class TETK_Helpers {
 		);
 
 		// Handle demo content and widgets file upload.
-		$content_file_info     = wp_handle_upload( $_FILES['content_file'], $upload_overrides );
-		$widget_file_info      = wp_handle_upload( $_FILES['widget_file'], $upload_overrides );
-		$customizer_file_info  = wp_handle_upload( $_FILES['customizer_file'], $upload_overrides );
+		$content_file_info    = wp_handle_upload( $_FILES['content_file'], $upload_overrides );
+		$widget_file_info     = wp_handle_upload( $_FILES['widget_file'], $upload_overrides );
+		$customizer_file_info = wp_handle_upload( $_FILES['customizer_file'], $upload_overrides );
 
 		if ( empty( $content_file_info['file'] ) || isset( $content_file_info['error'] ) ) {
 
@@ -522,8 +529,7 @@ class TETK_Helpers {
 
 			// Set uploaded widget file.
 			$selected_import_files['widgets'] = $widget_file_info['file'];
-		}
-		else {
+		} else {
 
 			// Add this error to log file.
 			$log_added = self::append_to_file(
@@ -532,7 +538,7 @@ class TETK_Helpers {
 					$widget_file_info['error']
 				),
 				$log_file_path,
-				esc_html__( 'Upload files' , 'themeegg-toolkit' )
+				esc_html__( 'Upload files', 'themeegg-toolkit' )
 			);
 		}
 
@@ -541,8 +547,7 @@ class TETK_Helpers {
 
 			// Set uploaded widget file.
 			$selected_import_files['customizer'] = $customizer_file_info['file'];
-		}
-		else {
+		} else {
 
 			// Add this error to log file.
 			$log_added = self::append_to_file(
@@ -551,7 +556,7 @@ class TETK_Helpers {
 					$customizer_file_info['error']
 				),
 				$log_file_path,
-				esc_html__( 'Upload files' , 'themeegg-toolkit' )
+				esc_html__( 'Upload files', 'themeegg-toolkit' )
 			);
 		}
 
@@ -559,7 +564,7 @@ class TETK_Helpers {
 		$log_added = self::append_to_file(
 			__( 'The import files were successfully uploaded!', 'themeegg-toolkit' ) . self::import_file_info( $selected_import_files ),
 			$log_file_path,
-			esc_html__( 'Upload files' , 'themeegg-toolkit' )
+			esc_html__( 'Upload files', 'themeegg-toolkit' )
 		);
 
 		// Return array with paths of uploaded files.
@@ -574,18 +579,18 @@ class TETK_Helpers {
 	 */
 	public static function import_file_info( $selected_import_files ) {
 		return PHP_EOL .
-		sprintf(
-			__( 'Initial max execution time = %s', 'themeegg-toolkit' ),
-			ini_get( 'max_execution_time' )
-		) . PHP_EOL .
-		sprintf(
-			__( 'Files info:%1$sSite URL = %2$s%1$sData file = %3$s%1$sWidget file = %4$s%1$sCustomizer file = %5$s', 'themeegg-toolkit' ),
-			PHP_EOL,
-			get_site_url(),
-			$selected_import_files['content'],
-			empty( $selected_import_files['widgets'] ) ? esc_html__( 'not defined!', 'themeegg-toolkit' ) : $selected_import_files['widgets'],
-			empty( $selected_import_files['customizer'] ) ? esc_html__( 'not defined!', 'themeegg-toolkit' ) : $selected_import_files['customizer']
-		);
+		       sprintf(
+			       __( 'Initial max execution time = %s', 'themeegg-toolkit' ),
+			       ini_get( 'max_execution_time' )
+		       ) . PHP_EOL .
+		       sprintf(
+			       __( 'Files info:%1$sSite URL = %2$s%1$sData file = %3$s%1$sWidget file = %4$s%1$sCustomizer file = %5$s', 'themeegg-toolkit' ),
+			       PHP_EOL,
+			       get_site_url(),
+			       $selected_import_files['content'],
+			       empty( $selected_import_files['widgets'] ) ? esc_html__( 'not defined!', 'themeegg-toolkit' ) : $selected_import_files['widgets'],
+			       empty( $selected_import_files['customizer'] ) ? esc_html__( 'not defined!', 'themeegg-toolkit' ) : $selected_import_files['customizer']
+		       );
 	}
 
 

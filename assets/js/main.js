@@ -28,13 +28,24 @@ jQuery(function ($) {
         }
         $(this).closest('.theme').attr('class', 'theme');
         $(this).closest('.theme').find('.notice').remove();
-
         // AJAX call to import everything (content, widgets, before/after setup)
         ajaxCall(data, $(this));
 
     });
 
     function ajaxCall(data, $this) {
+        var $notice_node;
+        if ($this.hasClass('no-data-exists')) {
+
+            $('.tetk-no-data').html('');
+
+            $notice_node = $('.tetk-no-data');
+
+        } else {
+
+
+            $notice_node = $this.closest('.theme');
+        }
         $.ajax({
             method: 'POST',
             url: tetk.ajax_url,
@@ -50,13 +61,14 @@ jQuery(function ($) {
         })
             .done(function (response) {
 
+
                 if ('undefined' !== typeof response.status && 'newAJAX' === response.status) {
-                    ajaxCall(data);
+                    ajaxCall(data, $this);
                 }
                 else if ('undefined' !== typeof response.message) {
                     var success = '<div class="notice update-message notice-success notice-alt"><p>' + response.message + '</p></div>';
                     $this.closest('.theme').addClass('theme-install-success');
-                    $this.closest('.theme').append(success);
+                    $notice_node.append(success);
                     $('.js-tetk-ajax-loader').hide();
                     $this.removeClass('updating-message');
                     $this.closest('.theme').removeClass('focus');
@@ -65,7 +77,7 @@ jQuery(function ($) {
                 else {
                     var error = '<div class="notice update-message notice-error notice-alt"><p>' + response + '</p></div>';
                     $this.closest('.theme').addClass('theme-install-failed');
-                    $this.closest('.theme').append(error);
+                    $notice_node.append(error);
                     $('.js-tetk-ajax-loader').hide();
                     $this.removeClass('updating-message');
                     $this.closest('.theme').removeClass('focus');
@@ -76,7 +88,7 @@ jQuery(function ($) {
             .fail(function (error) {
                 var error = '<div class="notice update-message notice-error notice-alt"><p>Error: ' + error.statusText + ' (' + error.status + ')' + '</p></div>';
                 $this.closest('.theme').addClass('theme-install-failed');
-                $this.closest('.theme').append(error);
+                $notice_node.append(error);
                 $('.js-tetk-ajax-loader').hide();
                 $this.removeClass('updating-message');
                 $this.closest('.theme').removeClass('focus');

@@ -1,6 +1,6 @@
 <?php
 /**
- * Main Theme Demo Import plugin class/file.
+ * Main ThemeEgg ToolKit plugin class/file.
  *
  * @package tetk
  */
@@ -13,7 +13,7 @@ require TETK_PATH . 'inc/class-tetk-customizer-importer.php';
 require TETK_PATH . 'inc/class-tetk-logger.php';
 
 /**
- * Theme Demo Import class, so we don't have to worry about namespaces.
+ * ThemeEgg ToolKit class, so we don't have to worry about namespaces.
  */
 class TETK_Demo_Import {
 
@@ -82,7 +82,7 @@ class TETK_Demo_Import {
 	public function create_plugin_page() {
 		$plugin_page_setup = apply_filters( 'themeegg-toolkit/plugin_page_setup', array(
 				'parent_slug' => 'themes.php',
-				'page_title'  => esc_html__( 'Theme Demo Import', 'themeegg-toolkit' ),
+				'page_title'  => esc_html__( 'ThemeEgg ToolKit', 'themeegg-toolkit' ),
 				'menu_title'  => esc_html__( 'Import Demo Content', 'themeegg-toolkit' ),
 				'capability'  => 'import',
 				'menu_slug'   => 'themeegg-toolkit',
@@ -106,9 +106,11 @@ class TETK_Demo_Import {
             <p><?php esc_html_e( 'Before you begin, make sure all the required plugins are activated.', 'themeegg-toolkit' ); ?></p>
         </div>
 
-        <div class="tetk wrap about-wrap">
+        <div class="wrap">
 
-            <h1><?php esc_html_e( 'Theme Demo Import', 'themeegg-toolkit' ); ?></h1>
+            <h1 class="wp-heading-inline"><?php esc_html_e( 'ThemeEgg ToolKit', 'themeegg-toolkit' ); ?><span
+                        class="title-count theme-count"><?php echo count( $this->import_files ); ?></span>
+            </h1>
 
 			<?php
 
@@ -123,47 +125,42 @@ class TETK_Demo_Import {
 				);
 			}
 
-			// Start output buffer for displaying the plugin intro text.
-			ob_start();
-			?>
 
-            <div class="TETK__intro-text">
-
-                <p class="about-description">
-					<?php esc_html_e( 'Quickly import your theme\'s live demo content, widgets and settings. This will provide you with a basic layout to build your website and speed up the development process.', 'themeegg-toolkit' ); ?>
-                </p>
-
-                <h3><?php esc_html_e( 'The following data will be imported:', 'themeegg-toolkit' ); ?></h3>
-
-                <ul>
-                    <li><?php esc_html_e( 'Posts', 'themeegg-toolkit' ); ?></li>
-                    <li><?php esc_html_e( 'Pages', 'themeegg-toolkit' ); ?></li>
-                    <li><?php esc_html_e( 'Images', 'themeegg-toolkit' ); ?></li>
-                    <li><?php esc_html_e( 'Widgets', 'themeegg-toolkit' ); ?></li>
-                    <li><?php esc_html_e( 'Menus', 'themeegg-toolkit' ); ?></li>
-                    <li><?php esc_html_e( 'Settings', 'themeegg-toolkit' ); ?></li>
-                </ul>
-
-                <p>
-                    <strong><?php esc_html_e( 'NOTE: Your existing content will NOT be deleted or modified.', 'themeegg-toolkit' ); ?></strong>
-                </p>
-
-                <hr>
-
-            </div>
-
-			<?php
-			$plugin_intro_text = ob_get_clean();
-
-			// Display the plugin intro text (can be replaced with custom text through the filter below).
-			echo wp_kses_post( apply_filters( 'themeegg-toolkit/plugin_intro_text', $plugin_intro_text ) );
 			?>
 
 
 			<?php if ( empty( $this->import_files ) ) : ?>
 
+                <div class="TETK__intro-text">
+
+                    <p class="about-description">
+						<?php esc_html_e( 'Quickly import your theme\'s live demo content, widgets and settings. This will provide you with a basic layout to build your website and speed up the development process.', 'themeegg-toolkit' ); ?>
+                    </p>
+
+                    <h3><?php esc_html_e( 'The following data will be imported:', 'themeegg-toolkit' ); ?></h3>
+
+                    <ul>
+                        <li><?php esc_html_e( 'Posts', 'themeegg-toolkit' ); ?></li>
+                        <li><?php esc_html_e( 'Pages', 'themeegg-toolkit' ); ?></li>
+                        <li><?php esc_html_e( 'Images', 'themeegg-toolkit' ); ?></li>
+                        <li><?php esc_html_e( 'Widgets', 'themeegg-toolkit' ); ?></li>
+                        <li><?php esc_html_e( 'Menus', 'themeegg-toolkit' ); ?></li>
+                        <li><?php esc_html_e( 'Settings', 'themeegg-toolkit' ); ?></li>
+                    </ul>
+
+                    <p>
+                        <strong><?php esc_html_e( 'NOTE: Your existing content will NOT be deleted or modified.', 'themeegg-toolkit' ); ?></strong>
+                    </p>
+
+                    <hr>
+
+                </div>
                 <div class="notice  notice-info  is-dismissible">
-                    <p><?php esc_html_e( 'There are no predefined import files available in this theme. Please upload the import files manually!', 'themeegg-toolkit' ); ?></p>
+                    <p>
+						<?php
+						echo sprintf( esc_html( 'Sorry we could not find any predefined import files available . Please upload the import files manually or please %sContact Us%s', 'themeegg-toolkit' ), '<a href="http://themeegg.com/support-forum">', '</a>' );
+						?>
+                    </p>
                 </div>
 
                 <div class="TETK__file-upload-container">
@@ -199,15 +196,6 @@ class TETK_Demo_Import {
 
                     <h2><?php esc_html_e( 'Choose which demo you want to import:', 'themeegg-toolkit' ); ?></h2>
 
-                    <!--  <select id="TETK__demo-import-files" class="TETK__demo-import-files">
-						<?php /*foreach ( $this->import_files as $index => $import_file ) : */ ?>
-                            <option value="<?php /*echo esc_attr( $index ); */ ?>">
-								<?php /*echo esc_html( $import_file['import_file_name'] ); */ ?>
-                            </option>
-						<?php /*endforeach; */ ?>
-                    </select>-->
-
-
                     <div class="theme-browser rendered">
                         <div class="themes wp-clearfix">
 
@@ -223,9 +211,9 @@ class TETK_Demo_Import {
 
                                     <a target="_blank" href="<?php echo $import_file['demo_url'] ?>"
                                        style="text-decoration: none;"
-                                       class="more-details">Live Preview</a>
+                                       class="more-details"><?php esc_html_e( 'Live Preview', 'themeegg-toolkit' ); ?></a>
                                     <div class="theme-author">
-                                        By ThemeGrill
+										<?php esc_html_e( 'By ThemeEgg', 'themeegg-toolkit' ); ?>
                                     </div>
 
                                     <div class="theme-id-container">
@@ -233,11 +221,8 @@ class TETK_Demo_Import {
                                         <h2 class="theme-name"><?php echo $import_file['import_file_name'] ?></h2>
 
                                         <div class="theme-actions">
-
                                             <a class="button button-primary load-customize hide-if-no-customize js-tetk-import-data"
-                                               data-index="<?php echo $index; ?>">
-                                               Import
-                                                Demo</a>
+                                               data-index="<?php echo $index; ?>"><?php esc_html_e( 'Import Demo', 'themeegg-toolkit' ); ?></a>
 
                                         </div>
                                     </div>
@@ -283,23 +268,15 @@ class TETK_Demo_Import {
 
 			<?php endif; ?>
 
-            <div class="TETK__demo-import-notice  js-tetk-demo-import-notice"><?php
-				if ( is_array( $this->import_files ) && ! empty( $this->import_files[0]['import_notice'] ) ) {
-					echo wp_kses_post( $this->import_files[0]['import_notice'] );
-				}
-				?></div>
+			<?php if ( empty( $this->import_files ) ) : ?>
+                <p></p>
+                <button class="no-data-exists button button-primary load-customize hide-if-no-customize js-tetk-import-data"><?php esc_html_e( 'Import Demo Content', 'themeegg-toolkit' ); ?></button>
+                <p></p>
+                <p class="tetk-no-data"></p>
 
-            <p class="TETK__button-container">
-                <button class="TETK__button  button  button-hero  button-primary  js-tetk-import-data"><?php esc_html_e( 'Import Demo Content', 'themeegg-toolkit' ); ?></button>
-                <span><?php esc_html_e( 'Click the button once and wait. The import process may take several minutes.', 'themeegg-toolkit' ); ?></span>
-            </p>
 
-            <p class="TETK__ajax-loader  js-tetk-ajax-loader">
-                <span class="spinner"></span> <?php esc_html_e( 'Importing, please wait!', 'themeegg-toolkit' ); ?>
-            </p>
-
-            <div class="TETK__response  js-tetk-ajax-response"></div>
-
+			<?php endif; ?>
+            <p><?php esc_html_e( 'Click the Import Demo button once and wait. The import process may take few minutes.', 'themeegg-toolkit' ); ?></p>
         </div>
 
 		<?php
@@ -311,7 +288,10 @@ class TETK_Demo_Import {
 	 *
 	 * @param string $hook holds info on which admin page you are currently loading.
 	 */
-	public function admin_enqueue_scripts( $hook ) {
+	public
+	function admin_enqueue_scripts(
+		$hook
+	) {
 
 		// Enqueue the scripts only on the plugin page.
 		if ( $this->plugin_page === $hook ) {
@@ -345,7 +325,8 @@ class TETK_Demo_Import {
 	 * 5. import customizer options (optional)
 	 * 6. after import setup (optional)
 	 */
-	public function import_demo_data_ajax_callback() {
+	public
+	function import_demo_data_ajax_callback() {
 		// Try to update PHP memory limit (so that it does not run out of it).
 		ini_set( 'memory_limit', apply_filters( 'themeegg-toolkit/import_memory_limit', '350M' ) );
 
@@ -461,24 +442,17 @@ class TETK_Demo_Import {
 		// Display final messages (success or error messages).
 		if ( empty( $this->frontend_error_messages ) ) {
 			$response['message'] = sprintf(
-				__( '%1$s%3$sThat\'s it, all done!%4$s%2$sThe demo import has finished. Please check your page and make sure that everything has imported correctly. If it did, you can deactivate the %3$sTheme Demo Import%4$s plugin.%5$s', 'themeegg-toolkit' ),
-				'<div class="notice  notice-success"><p>',
-				'<br>',
-				'<strong>',
-				'</strong>',
-				'</p></div>'
-			);
+				__( 'The demo import has finished. Please check your page and make sure that everything has imported correctly.', 'themeegg-toolkit' ) );
+
 		} else {
 			$response['message'] = $this->frontend_error_messages . '<br>';
 			$response['message'] .= sprintf(
-				__( '%1$sThe demo import has finished, but there were some import errors.%2$sMore details about the errors can be found in this %3$s%5$slog file%6$s%4$s%7$s', 'themeegg-toolkit' ),
-				'<div class="notice  notice-error"><p>',
+				__( 'The demo import has finished, but there were some import errors.%s More details about the errors can be found in this %s %slog file%s %s.', 'themeegg-toolkit' ),
 				'<br>',
 				'<strong>',
-				'</strong>',
 				'<a href="' . TETK_Helpers::get_log_url( $this->log_file_path ) . '" target="_blank">',
-				'</a>',
-				'</p></div>'
+				'</strong>',
+				'</a>'
 			);
 		}
 
@@ -491,7 +465,10 @@ class TETK_Demo_Import {
 	 *
 	 * @param string $import_file_path path to the import file.
 	 */
-	private function import_content( $import_file_path ) {
+	private
+	function import_content(
+		$import_file_path
+	) {
 
 		$this->microtime = microtime( true );
 
@@ -544,7 +521,10 @@ class TETK_Demo_Import {
 	 *
 	 * @param string $widget_import_file_path path to the widget import file.
 	 */
-	private function import_widgets( $widget_import_file_path ) {
+	private
+	function import_widgets(
+		$widget_import_file_path
+	) {
 
 		// Widget import results.
 		$results = array();
@@ -588,7 +568,10 @@ class TETK_Demo_Import {
 	 *
 	 * @param string $customizer_import_file_path path to the customizer import file.
 	 */
-	private function import_customizer( $customizer_import_file_path ) {
+	private
+	function import_customizer(
+		$customizer_import_file_path
+	) {
 
 		// Try to import the customizer settings.
 		$results = TETK_Customizer_Importer::import_customizer_options( $customizer_import_file_path );
@@ -619,7 +602,10 @@ class TETK_Demo_Import {
 	 * @param string $action the action name to be executed.
 	 * @param array $selected_import with information about the selected import.
 	 */
-	private function do_import_action( $action, $selected_import ) {
+	private
+	function do_import_action(
+		$action, $selected_import
+	) {
 
 		ob_start();
 		do_action( $action, $selected_import );
@@ -641,7 +627,9 @@ class TETK_Demo_Import {
 	 *
 	 * @return array
 	 */
-	public function new_ajax_request_maybe( $data ) {
+	public function new_ajax_request_maybe(
+		$data
+	) {
 		$time = microtime( true ) - $this->microtime;
 
 		// We should make a new ajax call, if the time is right.
@@ -678,7 +666,8 @@ class TETK_Demo_Import {
 	/**
 	 * Set current state of the content importer, so we can continue the import with new AJAX request.
 	 */
-	private function set_importer_data() {
+	private
+	function set_importer_data() {
 		$data = array(
 			'frontend_error_messages' => $this->frontend_error_messages,
 			'ajax_call_number'        => $this->ajax_call_number,
@@ -695,7 +684,8 @@ class TETK_Demo_Import {
 	/**
 	 * Get content importer data, so we can continue the import with this new AJAX request.
 	 */
-	private function get_importer_data() {
+	private
+	function get_importer_data() {
 		if ( $data = get_transient( 'TETK_importer_data' ) ) {
 			$this->frontend_error_messages = empty( $data['frontend_error_messages'] ) ? '' : $data['frontend_error_messages'];
 			$this->ajax_call_number        = empty( $data['ajax_call_number'] ) ? 1 : $data['ajax_call_number'];
@@ -713,7 +703,8 @@ class TETK_Demo_Import {
 	/**
 	 * Load the plugin textdomain, so that translations can be made.
 	 */
-	public function load_textdomain() {
+	public
+	function load_textdomain() {
 		load_plugin_textdomain( 'themeegg-toolkit', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 	}
 
@@ -721,7 +712,8 @@ class TETK_Demo_Import {
 	/**
 	 * Get data from filters, after the theme has loaded and instantiate the importer.
 	 */
-	public function setup_plugin_with_filter_data() {
+	public
+	function setup_plugin_with_filter_data() {
 
 		// Get info of import data files and filter it.
 		$this->import_files = TETK_Helpers::validate_import_file_info( apply_filters( 'tetk-demo-content-import', array() ) );
