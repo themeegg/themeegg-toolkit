@@ -45,6 +45,7 @@ jQuery(function ($) {
                 $('.js-tetk-import-data').attr('disabled', 'disabled');
                 $this.addClass('updating-message');
                 $this.closest('.theme').addClass('focus');
+                $this.text('Importing..');
             }
         })
             .done(function (response) {
@@ -70,6 +71,7 @@ jQuery(function ($) {
                     $this.closest('.theme').removeClass('focus');
                     $('.js-tetk-import-data').removeAttr('disabled');
                 }
+                $this.text('Import Demo');
             })
             .fail(function (error) {
                 var error = '<div class="notice update-message notice-error notice-alt"><p>Error: ' + error.statusText + ' (' + error.status + ')' + '</p></div>';
@@ -79,6 +81,7 @@ jQuery(function ($) {
                 $this.removeClass('updating-message');
                 $this.closest('.theme').removeClass('focus');
                 $('.js-tetk-import-data').removeAttr('disabled');
+                $this.text('Import Demo');
             });
     }
 
