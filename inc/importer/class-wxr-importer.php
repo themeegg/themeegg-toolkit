@@ -67,13 +67,14 @@ class TETK_HM_WXR_Importer {
 	 * Constructor
 	 *
 	 * @param array $options {
-	 *     @var bool $prefill_existing_posts Should we prefill `post_exists` calls? (True prefills and uses more memory, false checks once per imported post and takes longer. Default is true.)
-	 *     @var bool $prefill_existing_comments Should we prefill `comment_exists` calls? (True prefills and uses more memory, false checks once per imported comment and takes longer. Default is true.)
-	 *     @var bool $prefill_existing_terms Should we prefill `term_exists` calls? (True prefills and uses more memory, false checks once per imported term and takes longer. Default is true.)
-	 *     @var bool $update_attachment_guids Should attachment GUIDs be updated to the new URL? (True updates the GUID, which keeps compatibility with v1, false doesn't update, and allows deduplication and reimporting. Default is false.)
-	 *     @var bool $fetch_attachments Fetch attachments from the remote server. (True fetches and creates attachment posts, false skips attachments. Default is false.)
-	 *     @var bool $aggressive_url_search Should we search/replace for URLs aggressively? (True searches all posts' content for old URLs and replaces, false checks for `<img class="wp-image-*">` only. Default is false.)
-	 *     @var int $default_author User ID to use if author is missing or invalid. (Default is null, which leaves posts unassigned.)
+	 *
+	 * @var bool $prefill_existing_posts Should we prefill `post_exists` calls? (True prefills and uses more memory, false checks once per imported post and takes longer. Default is true.)
+	 * @var bool $prefill_existing_comments Should we prefill `comment_exists` calls? (True prefills and uses more memory, false checks once per imported comment and takes longer. Default is true.)
+	 * @var bool $prefill_existing_terms Should we prefill `term_exists` calls? (True prefills and uses more memory, false checks once per imported term and takes longer. Default is true.)
+	 * @var bool $update_attachment_guids Should attachment GUIDs be updated to the new URL? (True updates the GUID, which keeps compatibility with v1, false doesn't update, and allows deduplication and reimporting. Default is false.)
+	 * @var bool $fetch_attachments Fetch attachments from the remote server. (True fetches and creates attachment posts, false skips attachments. Default is false.)
+	 * @var bool $aggressive_url_search Should we search/replace for URLs aggressively? (True searches all posts' content for old URLs and replaces, false checks for `<img class="wp-image-*">` only. Default is false.)
+	 * @var int $default_author User ID to use if author is missing or invalid. (Default is null, which leaves posts unassigned.)
 	 * }
 	 */
 	public function __construct( $options = array() ) {
@@ -85,11 +86,11 @@ class TETK_HM_WXR_Importer {
 			'user'    => array(),
 		);
 
-		$this->mapping = $empty_types;
+		$this->mapping              = $empty_types;
 		$this->mapping['user_slug'] = array();
-		$this->mapping['term_id'] = array();
-		$this->requires_remapping = $empty_types;
-		$this->exists = $empty_types;
+		$this->mapping['term_id']   = array();
+		$this->requires_remapping   = $empty_types;
+		$this->exists               = $empty_types;
 
 		$this->options = wp_parse_args( $options, array(
 			'prefill_existing_posts'    => true,
@@ -110,6 +111,7 @@ class TETK_HM_WXR_Importer {
 	 * Get a stream reader for the file.
 	 *
 	 * @param string $file Path to the XML file.
+	 *
 	 * @return XMLReader|WP_Error Reader instance on success, error otherwise.
 	 */
 	protected function get_reader( $file ) {
@@ -212,7 +214,7 @@ class TETK_HM_WXR_Importer {
 					break;
 
 				case 'item':
-					$node = $reader->expand();
+					$node   = $reader->expand();
 					$parsed = $this->parse_post_node( $node );
 					if ( is_wp_error( $parsed ) ) {
 						$this->log_error( $parsed );
@@ -223,9 +225,9 @@ class TETK_HM_WXR_Importer {
 					}
 
 					if ( $parsed['data']['post_type'] === 'attachment' ) {
-						$data->media_count++;
+						$data->media_count ++;
 					} else {
-						$data->post_count++;
+						$data->post_count ++;
 					}
 					$data->comment_count += count( $parsed['comments'] );
 
@@ -236,7 +238,7 @@ class TETK_HM_WXR_Importer {
 				case 'wp:category':
 				case 'wp:tag':
 				case 'wp:term':
-					$data->term_count++;
+					$data->term_count ++;
 
 					// Handled everything in this node, move on to the next
 					$reader->next();
@@ -370,7 +372,7 @@ class TETK_HM_WXR_Importer {
 					break;
 
 				case 'item':
-					$node = $reader->expand();
+					$node   = $reader->expand();
 					$parsed = $this->parse_post_node( $node );
 					if ( is_wp_error( $parsed ) ) {
 						$this->log_error( $parsed );
@@ -592,13 +594,14 @@ class TETK_HM_WXR_Importer {
 	 * Parse a post node into post data.
 	 *
 	 * @param DOMElement $node Parent node of post data (typically `item`).
+	 *
 	 * @return array|WP_Error Post data array on success, error otherwise.
 	 */
 	protected function parse_post_node( $node ) {
-		$data = array();
-		$meta = array();
+		$data     = array();
+		$meta     = array();
 		$comments = array();
-		$terms = array();
+		$terms    = array();
 
 		foreach ( $node->childNodes as $child ) {
 			// We only care about child elements
@@ -736,7 +739,7 @@ class TETK_HM_WXR_Importer {
 			return false;
 		}
 
-		$original_id = isset( $data['post_id'] )     ? (int) $data['post_id']     : 0;
+		$original_id = isset( $data['post_id'] ) ? (int) $data['post_id'] : 0;
 		$parent_id   = isset( $data['post_parent'] ) ? (int) $data['post_parent'] : 0;
 		$author_id   = isset( $data['post_author'] ) ? (int) $data['post_author'] : 0;
 
@@ -754,6 +757,7 @@ class TETK_HM_WXR_Importer {
 				$data['post_title'],
 				$data['post_type']
 			) );
+
 			return false;
 		}
 
@@ -777,7 +781,7 @@ class TETK_HM_WXR_Importer {
 			if ( isset( $this->mapping['post'][ $parent_id ] ) ) {
 				$data['post_parent'] = $this->mapping['post'][ $parent_id ];
 			} else {
-				$meta[] = array( 'key' => '_wxr_import_parent', 'value' => $parent_id );
+				$meta[]             = array( 'key' => '_wxr_import_parent', 'value' => $parent_id );
 				$requires_remapping = true;
 
 				$data['post_parent'] = 0;
@@ -792,7 +796,7 @@ class TETK_HM_WXR_Importer {
 		} elseif ( isset( $this->mapping['user_slug'][ $author ] ) ) {
 			$data['post_author'] = $this->mapping['user_slug'][ $author ];
 		} else {
-			$meta[] = array( 'key' => '_wxr_import_user_slug', 'value' => $author );
+			$meta[]             = array( 'key' => '_wxr_import_user_slug', 'value' => $author );
 			$requires_remapping = true;
 
 			$data['post_author'] = (int) get_current_user_id();
@@ -800,7 +804,7 @@ class TETK_HM_WXR_Importer {
 
 		// Does the post look like it contains attachment images?
 		if ( preg_match( self::REGEX_HAS_ATTACHMENT_REFS, $data['post_content'] ) ) {
-			$meta[] = array( 'key' => '_wxr_import_has_attachment_refs', 'value' => true );
+			$meta[]             = array( 'key' => '_wxr_import_has_attachment_refs', 'value' => true );
 			$requires_remapping = true;
 		}
 
@@ -808,7 +812,7 @@ class TETK_HM_WXR_Importer {
 		$postdata = array(
 			'import_id' => $data['post_id'],
 		);
-		$allowed = array(
+		$allowed  = array(
 			'post_author'    => true,
 			'post_date'      => true,
 			'post_date_gmt'  => true,
@@ -841,10 +845,11 @@ class TETK_HM_WXR_Importer {
 					__( 'Skipping attachment "%s", fetching attachments disabled', 'themeegg-toolkit' ),
 					$data['post_title']
 				) );
+
 				return false;
 			}
 			$remote_url = ! empty( $data['attachment_url'] ) ? $data['attachment_url'] : $data['guid'];
-			$post_id = $this->process_attachment( $postdata, $meta, $remote_url );
+			$post_id    = $this->process_attachment( $postdata, $meta, $remote_url );
 		} else {
 			$post_id = wp_insert_post( $postdata, true );
 			do_action( 'wp_import_insert_post', $post_id, $original_id, $postdata, $data );
@@ -868,6 +873,7 @@ class TETK_HM_WXR_Importer {
 			 * @param array $terms Raw term data, already processed.
 			 */
 			do_action( 'wxr_importer.process_failed.post', $post_id, $data, $meta, $comments, $terms );
+
 			return false;
 		}
 
@@ -901,12 +907,12 @@ class TETK_HM_WXR_Importer {
 			$term_ids = array();
 			foreach ( $terms as $term ) {
 				$taxonomy = $term['taxonomy'];
-				$key = sha1( $taxonomy . ':' . $term['slug'] );
+				$key      = sha1( $taxonomy . ':' . $term['slug'] );
 
 				if ( isset( $this->mapping['term'][ $key ] ) ) {
 					$term_ids[ $taxonomy ][] = (int) $this->mapping['term'][ $key ];
 				} else {
-					$meta[] = array( 'key' => '_wxr_import_term', 'value' => $term );
+					$meta[]             = array( 'key' => '_wxr_import_term', 'value' => $term );
 					$requires_remapping = true;
 				}
 			}
@@ -948,9 +954,9 @@ class TETK_HM_WXR_Importer {
 	 */
 	protected function process_menu_item_meta( $post_id, $data, $meta ) {
 
-		$item_type = get_post_meta( $post_id, '_menu_item_type', true );
+		$item_type          = get_post_meta( $post_id, '_menu_item_type', true );
 		$original_object_id = get_post_meta( $post_id, '_menu_item_object_id', true );
-		$object_id = null;
+		$object_id          = null;
 
 		$this->logger->debug( sprintf( 'Processing menu item %s', $item_type ) );
 
@@ -1004,6 +1010,7 @@ class TETK_HM_WXR_Importer {
 	 *
 	 * @param array $post Attachment post details from WXR
 	 * @param string $url URL to fetch attachment from
+	 *
 	 * @return int|WP_Error Post ID on success, WP_Error otherwise
 	 */
 	protected function process_attachment( $post, $meta, $remote_url ) {
@@ -1058,7 +1065,7 @@ class TETK_HM_WXR_Importer {
 
 		// If we have a HTTPS URL, ensure the HTTP URL gets replaced too
 		if ( substr( $remote_url, 0, 8 ) === 'https://' ) {
-			$insecure_url = 'http' . substr( $remote_url, 5 );
+			$insecure_url                     = 'http' . substr( $remote_url, 5 );
 			$this->url_remap[ $insecure_url ] = $upload['url'];
 		}
 
@@ -1082,6 +1089,7 @@ class TETK_HM_WXR_Importer {
 	 * Parse a meta node into meta data.
 	 *
 	 * @param DOMElement $node Parent node of meta data (typically `wp:postmeta` or `wp:commentmeta`).
+	 *
 	 * @return array|null Meta data array on success, or null on error.
 	 */
 	protected function parse_meta_node( $node ) {
@@ -1115,6 +1123,7 @@ class TETK_HM_WXR_Importer {
 	 * @param array $meta List of meta data arrays
 	 * @param int $post_id Post to associate with
 	 * @param array $post Post data
+	 *
 	 * @return int|WP_Error Number of meta items imported on success, error otherwise.
 	 */
 	protected function process_post_meta( $meta, $post_id, $post ) {
@@ -1134,7 +1143,7 @@ class TETK_HM_WXR_Importer {
 				return false;
 			}
 
-			$key = apply_filters( 'import_post_meta_key', $meta_item['key'], $post_id, $post );
+			$key   = apply_filters( 'import_post_meta_key', $meta_item['key'], $post_id, $post );
 			$value = false;
 
 			if ( '_edit_last' === $key ) {
@@ -1170,6 +1179,7 @@ class TETK_HM_WXR_Importer {
 	 * Parse a comment node into comment data.
 	 *
 	 * @param DOMElement $node Parent node of comment data (typically `wp:comment`).
+	 *
 	 * @return array Comment data array.
 	 */
 	protected function parse_comment_node( $node ) {
@@ -1249,6 +1259,7 @@ class TETK_HM_WXR_Importer {
 	 * @param array $comments List of comment data arrays.
 	 * @param int $post_id Post to associate with.
 	 * @param array $post Post data.
+	 *
 	 * @return int|WP_Error Number of comments imported on success, error otherwise.
 	 */
 	protected function process_comments( $comments, $post_id, $post, $post_exists = false ) {
@@ -1275,8 +1286,8 @@ class TETK_HM_WXR_Importer {
 				return false;
 			}
 
-			$original_id = isset( $comment['comment_id'] )      ? (int) $comment['comment_id']      : 0;
-			$parent_id   = isset( $comment['comment_parent'] )  ? (int) $comment['comment_parent']  : 0;
+			$original_id = isset( $comment['comment_id'] ) ? (int) $comment['comment_id'] : 0;
+			$parent_id   = isset( $comment['comment_parent'] ) ? (int) $comment['comment_parent'] : 0;
 			$author_id   = isset( $comment['comment_user_id'] ) ? (int) $comment['comment_user_id'] : 0;
 
 			// if this is a new post we can skip the comment_exists() check
@@ -1300,7 +1311,7 @@ class TETK_HM_WXR_Importer {
 					$comment['comment_parent'] = $this->mapping['comment'][ $parent_id ];
 				} else {
 					// Prepare for remapping later
-					$meta[] = array( 'key' => '_wxr_import_parent', 'value' => $parent_id );
+					$meta[]             = array( 'key' => '_wxr_import_parent', 'value' => $parent_id );
 					$requires_remapping = true;
 
 					// Wipe the parent for now
@@ -1314,7 +1325,7 @@ class TETK_HM_WXR_Importer {
 					$comment['user_id'] = $this->mapping['user'][ $author_id ];
 				} else {
 					// Prepare for remapping later
-					$meta[] = array( 'key' => '_wxr_import_user', 'value' => $author_id );
+					$meta[]             = array( 'key' => '_wxr_import_user', 'value' => $author_id );
 					$requires_remapping = true;
 
 					// Wipe the user for now
@@ -1324,10 +1335,10 @@ class TETK_HM_WXR_Importer {
 
 			// Run standard core filters
 			$comment['comment_post_ID'] = $post_id;
-			$comment = wp_filter_comment( $comment );
+			$comment                    = wp_filter_comment( $comment );
 
 			// wp_insert_comment expects slashed data
-			$comment_id = wp_insert_comment( wp_slash( $comment ) );
+			$comment_id                               = wp_insert_comment( wp_slash( $comment ) );
 			$this->mapping['comment'][ $original_id ] = $comment_id;
 			if ( $requires_remapping ) {
 				$this->requires_remapping['comment'][ $comment_id ] = true;
@@ -1360,7 +1371,7 @@ class TETK_HM_WXR_Importer {
 			 */
 			do_action( 'wxr_importer.processed.comment', $comment_id, $comment, $meta, $post_id );
 
-			$num_comments++;
+			$num_comments ++;
 		}
 
 		return $num_comments;
@@ -1399,6 +1410,7 @@ class TETK_HM_WXR_Importer {
 	 *
 	 * @param array $a Comment data for the first comment
 	 * @param array $b Comment data for the second comment
+	 *
 	 * @return int
 	 */
 	public static function sort_comments_by_id( $a, $b ) {
@@ -1407,7 +1419,7 @@ class TETK_HM_WXR_Importer {
 		}
 
 		if ( empty( $b['comment_id'] ) ) {
-			return -1;
+			return - 1;
 		}
 
 		return $a['comment_id'] - $b['comment_id'];
@@ -1465,7 +1477,7 @@ class TETK_HM_WXR_Importer {
 		}
 
 		// Have we already handled this user?
-		$original_id = isset( $data['ID'] ) ? $data['ID'] : 0;
+		$original_id   = isset( $data['ID'] ) ? $data['ID'] : 0;
 		$original_slug = $data['user_login'];
 
 		if ( isset( $this->mapping['user'][ $original_id ] ) ) {
@@ -1495,8 +1507,8 @@ class TETK_HM_WXR_Importer {
 		}
 
 		$userdata = array(
-			'user_login'   => sanitize_user( $login, true ),
-			'user_pass'    => wp_generate_password(),
+			'user_login' => sanitize_user( $login, true ),
+			'user_pass'  => wp_generate_password(),
 		);
 
 		$allowed = array(
@@ -1528,6 +1540,7 @@ class TETK_HM_WXR_Importer {
 			 * @param array $userdata Raw data imported for the user.
 			 */
 			do_action( 'wxr_importer.process_failed.user', $user_id, $userdata );
+
 			return false;
 		}
 
@@ -1578,6 +1591,7 @@ class TETK_HM_WXR_Importer {
 				$tag_name['name']        = 'wp:cat_name';
 				$tag_name['description'] = 'wp:category_description';
 				$tag_name['taxonomy']    = null;
+				$tag_name['id']          = 'wp:term_id';
 
 				$data['taxonomy'] = 'category';
 				break;
@@ -1588,7 +1602,7 @@ class TETK_HM_WXR_Importer {
 				$tag_name['name']        = 'wp:tag_name';
 				$tag_name['description'] = 'wp:tag_description';
 				$tag_name['taxonomy']    = null;
-
+				$tag_name['id']          = 'wp:term_id';
 				$data['taxonomy'] = 'post_tag';
 				break;
 		}
@@ -1629,14 +1643,15 @@ class TETK_HM_WXR_Importer {
 			return false;
 		}
 
-		$original_id = isset( $data['id'] )      ? (int) $data['id']      : 0;
-		$parent_id   = isset( $data['parent'] )  ? (int) $data['parent']  : 0;
+		$original_id = isset( $data['id'] ) ? (int) $data['id'] : 0;
+		$parent_id   = isset( $data['parent'] ) ? (int) $data['parent'] : 0;
 
 		$mapping_key = sha1( $data['taxonomy'] . ':' . $data['slug'] );
-		$existing = $this->term_exists( $data );
+		$existing    = $this->term_exists( $data );
 		if ( $existing ) {
-			$this->mapping['term'][ $mapping_key ] = $existing;
+			$this->mapping['term'][ $mapping_key ]    = $existing;
 			$this->mapping['term_id'][ $original_id ] = $existing;
+
 			return false;
 		}
 
@@ -1646,9 +1661,10 @@ class TETK_HM_WXR_Importer {
 		}
 
 		$termdata = array();
-		$allowed = array(
-			'slug' => true,
+		$allowed  = array(
+			'slug'        => true,
 			'description' => true,
+			'id' => true
 		);
 
 		// Map the parent comment, or mark it as one we need to fix
@@ -1693,12 +1709,13 @@ class TETK_HM_WXR_Importer {
 			 * @param array $meta Meta data supplied for the term.
 			 */
 			do_action( 'wxr_importer.process_failed.term', $result, $data, $meta );
+
 			return false;
 		}
 
 		$term_id = $result['term_id'];
 
-		$this->mapping['term'][ $mapping_key ] = $term_id;
+		$this->mapping['term'][ $mapping_key ]    = $term_id;
 		$this->mapping['term_id'][ $original_id ] = $term_id;
 
 		$this->logger->info( sprintf(
@@ -1728,6 +1745,7 @@ class TETK_HM_WXR_Importer {
 	 *
 	 * @param string $url URL of item to fetch
 	 * @param array $post Attachment details
+	 *
 	 * @return array|WP_Error Local file location details on success, WP_Error otherwise
 	 */
 	protected function fetch_remote_file( $url, $post ) {
@@ -1742,13 +1760,14 @@ class TETK_HM_WXR_Importer {
 
 		// fetch the remote url and write it to the placeholder file
 		$response = wp_remote_get( $url, array(
-			'stream' => true,
+			'stream'   => true,
 			'filename' => $upload['file'],
 		) );
 
 		// request failed
 		if ( is_wp_error( $response ) ) {
 			unlink( $upload['file'] );
+
 			return $response;
 		}
 
@@ -1757,6 +1776,7 @@ class TETK_HM_WXR_Importer {
 		// make sure the fetch was successful
 		if ( $code !== 200 ) {
 			unlink( $upload['file'] );
+
 			return new WP_Error(
 				'import_file_error',
 				sprintf(
@@ -1769,15 +1789,17 @@ class TETK_HM_WXR_Importer {
 		}
 
 		$filesize = filesize( $upload['file'] );
-		$headers = wp_remote_retrieve_headers( $response );
+		$headers  = wp_remote_retrieve_headers( $response );
 
 		if ( isset( $headers['content-length'] ) && $filesize !== (int) $headers['content-length'] ) {
 			unlink( $upload['file'] );
+
 			return new WP_Error( 'import_file_error', __( 'Remote file is incorrect size', 'themeegg-toolkit' ) );
 		}
 
 		if ( 0 === $filesize ) {
 			unlink( $upload['file'] );
+
 			return new WP_Error( 'import_file_error', __( 'Zero size file downloaded', 'themeegg-toolkit' ) );
 		}
 
@@ -1785,6 +1807,7 @@ class TETK_HM_WXR_Importer {
 		if ( ! empty( $max_size ) && $filesize > $max_size ) {
 			unlink( $upload['file'] );
 			$message = sprintf( __( 'Remote file is too large, limit is %s', 'themeegg-toolkit' ), size_format( $max_size ) );
+
 			return new WP_Error( 'import_file_error', $message );
 		}
 
@@ -1804,8 +1827,8 @@ class TETK_HM_WXR_Importer {
 	protected function post_process_posts( $todo ) {
 		foreach ( $todo as $post_id => $_ ) {
 			$this->logger->debug( sprintf(
-				// Note: title intentionally not used to skip extra processing
-				// for when debug logging is off
+			// Note: title intentionally not used to skip extra processing
+			// for when debug logging is off
 				__( 'Running post-processing for post %d', 'themeegg-toolkit' ),
 				$post_id
 			) );
@@ -1852,7 +1875,7 @@ class TETK_HM_WXR_Importer {
 
 			$has_attachments = get_post_meta( $post_id, '_wxr_import_has_attachment_refs', true );
 			if ( ! empty( $has_attachments ) ) {
-				$post = get_post( $post_id );
+				$post    = get_post( $post_id );
 				$content = $post->post_content;
 
 				// Replace all the URLs we've got
@@ -1877,7 +1900,7 @@ class TETK_HM_WXR_Importer {
 
 			// Run the update
 			$data['ID'] = $post_id;
-			$result = wp_update_post( $data, true );
+			$result     = wp_update_post( $data, true );
 			if ( is_wp_error( $result ) ) {
 				$this->logger->warning( sprintf(
 					__( 'Could not update "%s" (post #%d) with mapped data', 'themeegg-toolkit' ),
@@ -1988,7 +2011,7 @@ class TETK_HM_WXR_Importer {
 
 			// Run the update
 			$data['comment_ID'] = $comment_ID;
-			$result = wp_update_comment( wp_slash( $data ) );
+			$result             = wp_update_comment( wp_slash( $data ) );
 			if ( empty( $result ) ) {
 				$this->logger->warning( sprintf(
 					__( 'Could not update comment #%d with mapped data', 'themeegg-toolkit' ),
@@ -2017,7 +2040,7 @@ class TETK_HM_WXR_Importer {
 			$wpdb->query( $query );
 
 			// remap enclosure urls
-			$query = $wpdb->prepare( "UPDATE {$wpdb->postmeta} SET meta_value = REPLACE(meta_value, %s, %s) WHERE meta_key='enclosure'", $from_url, $to_url );
+			$query  = $wpdb->prepare( "UPDATE {$wpdb->postmeta} SET meta_value = REPLACE(meta_value, %s, %s) WHERE meta_key='enclosure'", $from_url, $to_url );
 			$result = $wpdb->query( $query );
 		}
 	}
@@ -2043,6 +2066,7 @@ class TETK_HM_WXR_Importer {
 	 * Decide if the given meta key maps to information we will want to import
 	 *
 	 * @param string $key The meta key to check
+	 *
 	 * @return string|bool The key if we do want to import, false if not
 	 */
 	public function is_valid_meta_key( $key ) {
@@ -2071,7 +2095,7 @@ class TETK_HM_WXR_Importer {
 	 * @access protected
 	 * @return int 60
 	 */
-	function bump_request_timeout($val) {
+	function bump_request_timeout( $val ) {
 		return 60;
 	}
 
@@ -2105,6 +2129,7 @@ class TETK_HM_WXR_Importer {
 	 * Does the post exist?
 	 *
 	 * @param array $data Post data to check against.
+	 *
 	 * @return int|bool Existing post ID if it exists, false otherwise.
 	 */
 	protected function post_exists( $data ) {
@@ -2121,7 +2146,7 @@ class TETK_HM_WXR_Importer {
 		}
 
 		// Still nothing, try post_exists, and cache it
-		$exists = post_exists( $data['post_title'], $data['post_content'], $data['post_date'] );
+		$exists                              = post_exists( $data['post_title'], $data['post_content'], $data['post_date'] );
 		$this->exists['post'][ $exists_key ] = $exists;
 
 		return $exists;
@@ -2134,7 +2159,7 @@ class TETK_HM_WXR_Importer {
 	 * @param int $post_id Post ID.
 	 */
 	protected function mark_post_exists( $data, $post_id ) {
-		$exists_key = $data['guid'];
+		$exists_key                          = $data['guid'];
 		$this->exists['post'][ $exists_key ] = $post_id;
 	}
 
@@ -2148,7 +2173,7 @@ class TETK_HM_WXR_Importer {
 		$posts = $wpdb->get_results( "SELECT comment_ID, comment_author, comment_date FROM {$wpdb->comments}" );
 
 		foreach ( $posts as $item ) {
-			$exists_key = sha1( $item->comment_author . ':' . $item->comment_date );
+			$exists_key                             = sha1( $item->comment_author . ':' . $item->comment_date );
 			$this->exists['comment'][ $exists_key ] = $item->comment_ID;
 		}
 	}
@@ -2157,6 +2182,7 @@ class TETK_HM_WXR_Importer {
 	 * Does the comment exist?
 	 *
 	 * @param array $data Comment data to check against.
+	 *
 	 * @return int|bool Existing comment ID if it exists, false otherwise.
 	 */
 	protected function comment_exists( $data ) {
@@ -2173,7 +2199,7 @@ class TETK_HM_WXR_Importer {
 		}
 
 		// Still nothing, try comment_exists, and cache it
-		$exists = comment_exists( $data['comment_author'], $data['comment_date'] );
+		$exists                                 = comment_exists( $data['comment_author'], $data['comment_date'] );
 		$this->exists['comment'][ $exists_key ] = $exists;
 
 		return $exists;
@@ -2186,7 +2212,7 @@ class TETK_HM_WXR_Importer {
 	 * @param int $comment_id Comment ID.
 	 */
 	protected function mark_comment_exists( $data, $comment_id ) {
-		$exists_key = sha1( $data['comment_author'] . ':' . $data['comment_date'] );
+		$exists_key                             = sha1( $data['comment_author'] . ':' . $data['comment_date'] );
 		$this->exists['comment'][ $exists_key ] = $comment_id;
 	}
 
@@ -2202,7 +2228,7 @@ class TETK_HM_WXR_Importer {
 		$terms = $wpdb->get_results( $query );
 
 		foreach ( $terms as $item ) {
-			$exists_key = sha1( $item->taxonomy . ':' . $item->slug );
+			$exists_key                          = sha1( $item->taxonomy . ':' . $item->slug );
 			$this->exists['term'][ $exists_key ] = $item->term_id;
 		}
 	}
@@ -2211,6 +2237,7 @@ class TETK_HM_WXR_Importer {
 	 * Does the term exist?
 	 *
 	 * @param array $data Term data to check against.
+	 *
 	 * @return int|bool Existing term ID if it exists, false otherwise.
 	 */
 	protected function term_exists( $data ) {
@@ -2244,7 +2271,7 @@ class TETK_HM_WXR_Importer {
 	 * @param int $term_id Term ID.
 	 */
 	protected function mark_term_exists( $data, $term_id ) {
-		$exists_key = sha1( $data['taxonomy'] . ':' . $data['slug'] );
+		$exists_key                          = sha1( $data['taxonomy'] . ':' . $data['slug'] );
 		$this->exists['term'][ $exists_key ] = $term_id;
 	}
 }

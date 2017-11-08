@@ -15,11 +15,11 @@ function TETK_import_files() {
 
 		$demo_urls[] = array(
 			'import_file_name'           => 'Eggnews',
-			'import_file_url'            => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/content.xml',
-			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/widgets.wie',
-			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/customizer.dat',
-			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/screenshot.png',
-			'demo_url'                   => 'http://demo.themeegg.com/themes/eggnews/',
+			'import_file_url'            => 'https://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/content.xml',
+			'import_widget_file_url'     => 'https://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/widgets.wie',
+			'import_customizer_file_url' => 'https://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/demo-content/customizer.dat',
+			'import_preview_image_url'   => 'https://demo.themeegg.com/themes/eggnews/wp-content/themes/eggnews/screenshot.png',
+			'demo_url'                   => 'https://demo.themeegg.com/themes/eggnews/',
 			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 		);
 	}
