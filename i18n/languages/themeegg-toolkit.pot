@@ -2,9 +2,9 @@
 # This file is distributed under the GPL3.
 msgid ""
 msgstr ""
-"Project-Id-Version: ThemeEgg ToolKit 1.0.0\n"
+"Project-Id-Version: ThemeEgg ToolKit 1.1.1\n"
 "Report-Msgid-Bugs-To: themeeggofficial@gmail.com\n"
-"POT-Creation-Date: 2017-10-27 13:35:28+00:00\n"
+"POT-Creation-Date: 2017-11-14 16:52:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -14,458 +14,844 @@ msgstr ""
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
 #: inc/class-tetk-customizer-importer.php:36
+#: svn-production/tags/1.0.0/inc/class-tetk-customizer-importer.php:36
+#: svn-production/tags/1.1.0/inc/class-tetk-customizer-importer.php:36
+#: svn-production/trunk/inc/class-tetk-customizer-importer.php:36
 msgid "The customizer import file is missing! File path: %s"
 msgstr ""
 
 #: inc/class-tetk-customizer-importer.php:56
+#: svn-production/tags/1.0.0/inc/class-tetk-customizer-importer.php:56
+#: svn-production/tags/1.1.0/inc/class-tetk-customizer-importer.php:56
+#: svn-production/trunk/inc/class-tetk-customizer-importer.php:56
 msgid ""
 "The customizer import file is not in a correct format. Please make sure to "
 "use the correct customizer import file."
 msgstr ""
 
 #: inc/class-tetk-customizer-importer.php:62
+#: svn-production/tags/1.0.0/inc/class-tetk-customizer-importer.php:62
+#: svn-production/tags/1.1.0/inc/class-tetk-customizer-importer.php:62
+#: svn-production/trunk/inc/class-tetk-customizer-importer.php:62
 msgid ""
 "The customizer import file is not suitable for current theme. You can only "
 "import customizer settings for the same theme or a child theme."
 msgstr ""
 
-#: inc/class-tetk-helpers.php:71
+#: inc/class-tetk-helpers.php:73
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:71
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:73
+#: svn-production/trunk/inc/class-tetk-helpers.php:73
 msgid "\"import_file_url\" or \"local_import_file\" for %s%s%s are not defined!"
 msgstr ""
 
 #: inc/class-tetk-helpers.php:177
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:177
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:177
+#: svn-production/trunk/inc/class-tetk-helpers.php:177
 msgid "URL for %s%s%s file is not defined!"
 msgstr ""
 
 #: inc/class-tetk-helpers.php:199
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:199
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:199
+#: svn-production/trunk/inc/class-tetk-helpers.php:199
 msgid ""
 "An error occurred while fetching %s%s%s file from the server!%sReason: %s - "
 "%s."
 msgstr ""
 
-#: inc/class-tetk-helpers.php:239 inc/class-tetk-helpers.php:283
+#: inc/class-tetk-helpers.php:240 inc/class-tetk-helpers.php:285
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:239
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:283
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:240
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:285
+#: svn-production/trunk/inc/class-tetk-helpers.php:240
+#: svn-production/trunk/inc/class-tetk-helpers.php:285
 msgid ""
 "An error occurred while writing file to your server! Tried to write a file "
 "to: %s%s."
 msgstr ""
 
-#: inc/class-tetk-helpers.php:318
+#: inc/class-tetk-helpers.php:321
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:318
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:321
+#: svn-production/trunk/inc/class-tetk-helpers.php:321
 msgid ""
 "An error occurred while reading a file from your server! Tried reading file "
 "from path: %s%s."
 msgstr ""
 
-#: inc/class-tetk-helpers.php:342
+#: inc/class-tetk-helpers.php:345
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:342
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:345
+#: svn-production/trunk/inc/class-tetk-helpers.php:345
 msgid ""
 "This WordPress page does not have %sdirect%s write file access. This plugin "
 "needs it in order to save the demo import xml file to the upload directory "
 "of your site. You can change this setting with these instructions: %s."
 msgstr ""
 
-#: inc/class-tetk-helpers.php:353 inc/class-tetk-main.php:83
-#: inc/class-tetk-main.php:106
-msgid "Theme Demo Import"
+#: inc/class-tetk-helpers.php:356
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:356
+#: svn-production/trunk/inc/class-tetk-helpers.php:356
+msgid "ThemeEgg Demo Import"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:354
+#: inc/class-tetk-helpers.php:357
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:354
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:357
+#: svn-production/trunk/inc/class-tetk-helpers.php:357
 msgid "Import Demo Data"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:366
+#: inc/class-tetk-helpers.php:369
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:366
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:369
+#: svn-production/trunk/inc/class-tetk-helpers.php:369
 msgid ""
 "An error occurred while retrieving reading/writing permissions to your "
 "server (could not retrieve WP filesystem credentials)!"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:374
+#: inc/class-tetk-helpers.php:377
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:374
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:377
+#: svn-production/trunk/inc/class-tetk-helpers.php:377
 msgid "Your WordPress login credentials don't allow to use WP_Filesystem!"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:439
-msgid "Theme Demo Import - "
+#: inc/class-tetk-helpers.php:444
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:444
+#: svn-production/trunk/inc/class-tetk-helpers.php:444
+msgid "ThemeEgg Demo Import - "
 msgstr ""
 
-#: inc/class-tetk-helpers.php:475
+#: inc/class-tetk-helpers.php:481
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:475
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:481
+#: svn-production/trunk/inc/class-tetk-helpers.php:481
 msgid ""
 "%sYour user role isn't high enough. You don't have permission to import "
 "demo data.%s"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:511
+#: inc/class-tetk-helpers.php:518
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:511
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:518
+#: svn-production/trunk/inc/class-tetk-helpers.php:518
 msgid ""
 "Please upload XML file for content import. If you want to import widgets or "
 "customizer settings only, please use Widget Importer & Exporter or the "
 "Customizer Export/Import plugin."
 msgstr ""
 
-#: inc/class-tetk-helpers.php:513 inc/class-tetk-helpers.php:535
-#: inc/class-tetk-helpers.php:554 inc/class-tetk-helpers.php:562
+#: inc/class-tetk-helpers.php:520 inc/class-tetk-helpers.php:541
+#: inc/class-tetk-helpers.php:559 inc/class-tetk-helpers.php:567
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:513
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:535
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:554
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:562
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:520
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:541
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:559
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:567
+#: svn-production/trunk/inc/class-tetk-helpers.php:520
+#: svn-production/trunk/inc/class-tetk-helpers.php:541
+#: svn-production/trunk/inc/class-tetk-helpers.php:559
+#: svn-production/trunk/inc/class-tetk-helpers.php:567
 msgid "Upload files"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:531
+#: inc/class-tetk-helpers.php:537
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:531
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:537
+#: svn-production/trunk/inc/class-tetk-helpers.php:537
 msgid "Widget file was not uploaded. Error: %s"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:550
+#: inc/class-tetk-helpers.php:555
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:550
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:555
+#: svn-production/trunk/inc/class-tetk-helpers.php:555
 msgid "Customizer file was not uploaded. Error: %s"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:560
+#: inc/class-tetk-helpers.php:565
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:560
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:565
+#: svn-production/trunk/inc/class-tetk-helpers.php:565
 msgid "The import files were successfully uploaded!"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:578
+#: inc/class-tetk-helpers.php:583
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:578
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:583
+#: svn-production/trunk/inc/class-tetk-helpers.php:583
 msgid "Initial max execution time = %s"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:582
+#: inc/class-tetk-helpers.php:587
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:582
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:587
+#: svn-production/trunk/inc/class-tetk-helpers.php:587
 msgid ""
 "Files info:%1$sSite URL = %2$s%1$sData file = %3$s%1$sWidget file = "
 "%4$s%1$sCustomizer file = %5$s"
 msgstr ""
 
-#: inc/class-tetk-helpers.php:586 inc/class-tetk-helpers.php:587
+#: inc/class-tetk-helpers.php:591 inc/class-tetk-helpers.php:592
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:586
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:587
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:591
+#: svn-production/tags/1.1.0/inc/class-tetk-helpers.php:592
+#: svn-production/trunk/inc/class-tetk-helpers.php:591
+#: svn-production/trunk/inc/class-tetk-helpers.php:592
 msgid "not defined!"
 msgstr ""
 
-#: inc/class-tetk-main.php:84 inc/class-tetk-main.php:238
+#. Plugin Name of the plugin/theme
+msgid "ThemeEgg ToolKit"
+msgstr ""
+
+#: inc/class-tetk-main.php:86 inc/class-tetk-main.php:273
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:84
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:238
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:86
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:273
+#: svn-production/trunk/inc/class-tetk-main.php:86
+#: svn-production/trunk/inc/class-tetk-main.php:273
 msgid "Import Demo Content"
 msgstr ""
 
-#: inc/class-tetk-main.php:101
+#: inc/class-tetk-main.php:106
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:101
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:106
+#: svn-production/trunk/inc/class-tetk-main.php:106
 msgid "Before you begin, make sure all the required plugins are activated."
 msgstr ""
 
-#: inc/class-tetk-main.php:113
+#: inc/class-tetk-main.php:120
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:113
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:120
+#: svn-production/trunk/inc/class-tetk-main.php:120
 msgid ""
 "%sWarning: your server is using %sPHP safe mode%s. This means that you "
 "might experience server timeout errors.%s"
 msgstr ""
 
-#: inc/class-tetk-main.php:128
+#: inc/class-tetk-main.php:137
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:128
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:137
+#: svn-production/trunk/inc/class-tetk-main.php:137
 msgid ""
 "Quickly import your theme's live demo content, widgets and settings. This "
 "will provide you with a basic layout to build your website and speed up the "
 "development process."
 msgstr ""
 
-#: inc/class-tetk-main.php:131
+#: inc/class-tetk-main.php:140
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:131
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:140
+#: svn-production/trunk/inc/class-tetk-main.php:140
 msgid "The following data will be imported:"
 msgstr ""
 
-#: inc/class-tetk-main.php:134
+#: inc/class-tetk-main.php:143
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:134
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:143
+#: svn-production/trunk/inc/class-tetk-main.php:143
 msgid "Posts"
 msgstr ""
 
-#: inc/class-tetk-main.php:135
+#: inc/class-tetk-main.php:144
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:135
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:144
+#: svn-production/trunk/inc/class-tetk-main.php:144
 msgid "Pages"
 msgstr ""
 
-#: inc/class-tetk-main.php:136
+#: inc/class-tetk-main.php:145
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:136
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:145
+#: svn-production/trunk/inc/class-tetk-main.php:145
 msgid "Images"
 msgstr ""
 
-#: inc/class-tetk-main.php:137
+#: inc/class-tetk-main.php:146
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:137
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:146
+#: svn-production/trunk/inc/class-tetk-main.php:146
 msgid "Widgets"
 msgstr ""
 
-#: inc/class-tetk-main.php:138
+#: inc/class-tetk-main.php:147
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:138
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:147
+#: svn-production/trunk/inc/class-tetk-main.php:147
 msgid "Menus"
 msgstr ""
 
-#: inc/class-tetk-main.php:139
+#: inc/class-tetk-main.php:148
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:139
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:148
+#: svn-production/trunk/inc/class-tetk-main.php:148
 msgid "Settings"
 msgstr ""
 
-#: inc/class-tetk-main.php:142
+#: inc/class-tetk-main.php:152
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:142
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:152
+#: svn-production/trunk/inc/class-tetk-main.php:152
 msgid "NOTE: Your existing content will NOT be deleted or modified."
 msgstr ""
 
-#: inc/class-tetk-main.php:159
+#: inc/class-tetk-main.php:168
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:164
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:168
+#: svn-production/trunk/inc/class-tetk-main.php:168
+msgid "Manually upload the demo files"
+msgstr ""
+
+#: inc/class-tetk-main.php:172
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:167
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:172
+#: svn-production/trunk/inc/class-tetk-main.php:172
+msgid "Choose a XML file for content import:"
+msgstr ""
+
+#: inc/class-tetk-main.php:179
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:172
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:179
+#: svn-production/trunk/inc/class-tetk-main.php:179
+msgid "Choose a WIE or JSON file for widget import:"
+msgstr ""
+
+#: inc/class-tetk-main.php:180 inc/class-tetk-main.php:187
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:172
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:177
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:180
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:187
+#: svn-production/trunk/inc/class-tetk-main.php:180
+#: svn-production/trunk/inc/class-tetk-main.php:187
+msgid "(*optional)"
+msgstr ""
+
+#: inc/class-tetk-main.php:186
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:177
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:186
+#: svn-production/trunk/inc/class-tetk-main.php:186
+msgid "Choose a DAT file for customizer import:"
+msgstr ""
+
+#: inc/class-tetk-main.php:197
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:187
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:197
+#: svn-production/trunk/inc/class-tetk-main.php:197
+msgid "Choose which demo you want to import:"
+msgstr ""
+
+#: inc/class-tetk-main.php:214
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:214
+#: svn-production/trunk/inc/class-tetk-main.php:214
+msgid "Live Preview"
+msgstr ""
+
+#: inc/class-tetk-main.php:216
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:216
+#: svn-production/trunk/inc/class-tetk-main.php:216
+msgid "By ThemeEgg"
+msgstr ""
+
+#: inc/class-tetk-main.php:225
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:225
+#: svn-production/trunk/inc/class-tetk-main.php:225
+msgid "Import Demo"
+msgstr ""
+
+#: inc/class-tetk-main.php:251
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:212
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:251
+#: svn-production/trunk/inc/class-tetk-main.php:251
+msgid "Import preview:"
+msgstr ""
+
+#: inc/class-tetk-main.php:255 inc/class-tetk-main.php:309
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:216
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:271
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:255
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:309
+#: svn-production/trunk/inc/class-tetk-main.php:255
+#: svn-production/trunk/inc/class-tetk-main.php:309
+msgid "No preview image defined for this import."
+msgstr ""
+
+#: inc/class-tetk-main.php:279
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:279
+#: svn-production/trunk/inc/class-tetk-main.php:279
+msgid ""
+"Click the Import Demo button once and wait. The import process may take few "
+"minutes."
+msgstr ""
+
+#: inc/class-tetk-main.php:366
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:328
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:366
+#: svn-production/trunk/inc/class-tetk-main.php:366
+msgid "Manually uploaded files"
+msgstr ""
+
+#: inc/class-tetk-main.php:382 inc/class-tetk-main.php:393
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:345
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:356
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:382
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:393
+#: svn-production/trunk/inc/class-tetk-main.php:382
+#: svn-production/trunk/inc/class-tetk-main.php:393
+msgid "Downloaded files"
+msgstr ""
+
+#: inc/class-tetk-main.php:389
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:352
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:389
+#: svn-production/trunk/inc/class-tetk-main.php:389
+msgid "The import files for: %s were successfully downloaded!"
+msgstr ""
+
+#: inc/class-tetk-main.php:398
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:362
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:398
+#: svn-production/trunk/inc/class-tetk-main.php:398
+msgid "No import files specified!"
+msgstr ""
+
+#: inc/class-tetk-main.php:445
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:445
+#: svn-production/trunk/inc/class-tetk-main.php:445
+msgid ""
+"The demo import has finished. Please check your page and make sure that "
+"everything has imported correctly."
+msgstr ""
+
+#: inc/class-tetk-main.php:450
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:450
+#: svn-production/trunk/inc/class-tetk-main.php:450
+msgid ""
+"The demo import has finished, but there were some import errors.%s More "
+"details about the errors can be found in this %s %slog file%s %s."
+msgstr ""
+
+#: inc/class-tetk-main.php:505
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:474
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:505
+#: svn-production/trunk/inc/class-tetk-main.php:505
+msgid "Max execution time after content import = "
+msgstr ""
+
+#: inc/class-tetk-main.php:507
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:476
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:507
+#: svn-production/trunk/inc/class-tetk-main.php:507
+msgid "Importing content"
+msgstr ""
+
+#: inc/class-tetk-main.php:549 inc/class-tetk-main.php:561
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:515
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:527
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:549
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:561
+#: svn-production/trunk/inc/class-tetk-main.php:549
+#: svn-production/trunk/inc/class-tetk-main.php:561
+msgid "Importing widgets"
+msgstr ""
+
+#: inc/class-tetk-main.php:586 inc/class-tetk-main.php:594
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:549
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:557
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:586
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:594
+#: svn-production/trunk/inc/class-tetk-main.php:586
+#: svn-production/trunk/inc/class-tetk-main.php:594
+msgid "Importing customizer settings"
+msgstr ""
+
+#: inc/class-tetk-main.php:592
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:555
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:592
+#: svn-production/trunk/inc/class-tetk-main.php:592
+msgid "Customizer settings import finished!"
+msgstr ""
+
+#: inc/class-tetk-main.php:650
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:607
+#: svn-production/tags/1.1.0/inc/class-tetk-main.php:650
+#: svn-production/trunk/inc/class-tetk-main.php:650
+msgid "Completed AJAX call number: "
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:44
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:44
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:44
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:44
+msgid "Widget import file could not be found."
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:76
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:76
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:76
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:76
+msgid "Widget import data could not be read. Please try a different file."
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:116
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:116
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:116
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:116
+msgid "Sidebar does not exist in theme (moving widget to Inactive)"
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:138
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:138
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:138
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:138
+msgid "Site does not support widget"
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:173
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:173
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:173
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:173
+msgid "Widget already exists"
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:231
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:232
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:232
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:232
+msgid "Imported"
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:235
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:236
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:236
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:236
+msgid "Imported to Inactive"
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:241
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:242
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:242
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:242
+msgid "No Title"
+msgstr ""
+
+#: inc/class-tetk-widget-importer.php:290
+#: svn-production/tags/1.0.0/inc/class-tetk-widget-importer.php:291
+#: svn-production/tags/1.1.0/inc/class-tetk-widget-importer.php:291
+#: svn-production/trunk/inc/class-tetk-widget-importer.php:291
+msgid "No results for widget import!"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:132
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:130
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:130
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:130
+msgid "Could not open the file for parsing"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:168
+#: inc/importer/class-wxr-importer.php:284
+#: inc/importer/class-wxr-importer.php:357
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:166
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:282
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:355
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:166
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:282
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:355
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:166
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:282
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:355
+msgid ""
+"This WXR file (version %s) is newer than the importer (version %s) and may "
+"not be supported. Please consider updating."
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:506
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:504
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:504
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:504
+msgid "The file does not exist, please try again."
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:566
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:564
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:564
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:564
+msgid "Invalid author mapping"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:668
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:665
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:665
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:665
+msgid "Cannot import auto-draft posts"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:756
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:753
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:753
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:753
+msgid "Failed to import \"%s\": Invalid post type %s"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:767
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:763
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:763
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:763
+msgid "%s \"%s\" already exists."
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:845
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:841
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:841
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:841
+msgid "Skipping attachment \"%s\", fetching attachments disabled"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:860
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:855
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:855
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:855
+msgid "Failed to import \"%s\" (%s)"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:893
+#: inc/importer/class-wxr-importer.php:1722
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:887
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1705
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:887
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1705
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:887
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1705
+msgid "Imported \"%s\" (%s)"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:898
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:892
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:892
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:892
+msgid "Post %d remapped to %d"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1043
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1036
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1036
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1036
+msgid "Invalid file type"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1531
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1519
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1519
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1519
+msgid "Failed to import user \"%s\""
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1553
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1540
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1540
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1540
+msgid "Imported user \"%s\""
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1557
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1544
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1544
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1544
+msgid "User %d remapped to %d"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1697
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1681
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1681
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1681
+msgid "Failed to import %s %s"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1727
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1710
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1710
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1710
+msgid "Term %d remapped to %d"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1783
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1763
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1763
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1763
+msgid "Remote server returned %1$d %2$s for %3$s"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1797
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1776
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1776
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1776
+msgid "Remote file is incorrect size"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1803
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1781
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1781
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1781
+msgid "Zero size file downloaded"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1809
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1787
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1787
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1787
+msgid "Remote file is too large, limit is %s"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1832
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1809
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1809
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1809
+msgid "Running post-processing for post %d"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1845
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1822
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1822
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1822
+msgid "Could not find the post parent for \"%s\" (post #%d)"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1850
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1827
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1827
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1827
+msgid "Post %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1864
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1841
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1841
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1841
+msgid "Could not find the author for \"%s\" (post #%d)"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1869
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1846
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1846
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1846
+msgid "Post %d was imported with author \"%s\", but could not be found"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1895
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1872
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1872
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1872
+msgid "Post %d was marked for post-processing, but none was required."
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1906
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1883
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1883
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1883
+msgid "Could not update \"%s\" (post #%d) with mapped data"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1951
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1928
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1928
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1928
+msgid "Could not find the menu object for \"%s\" (post #%d)"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1956
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1933
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1933
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1933
+msgid ""
+"Post %d was imported with object \"%d\" of type \"%s\", but could not be "
+"found"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1978
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1955
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1955
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1955
+msgid "Could not find the comment parent for comment #%d"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1982
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1959
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1959
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1959
+msgid "Comment %d was imported with parent %d, but could not be found"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:1996
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1973
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1973
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1973
+msgid "Could not find the author for comment #%d"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:2000
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1977
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1977
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1977
+msgid "Comment %d was imported with author %d, but could not be found"
+msgstr ""
+
+#: inc/importer/class-wxr-importer.php:2017
+#: svn-production/tags/1.0.0/inc/importer/class-wxr-importer.php:1994
+#: svn-production/tags/1.1.0/inc/importer/class-wxr-importer.php:1994
+#: svn-production/trunk/inc/importer/class-wxr-importer.php:1994
+msgid "Could not update comment #%d with mapped data"
+msgstr ""
+
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:353
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:83
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:106
+msgid "Theme Demo Import"
+msgstr ""
+
+#: svn-production/tags/1.0.0/inc/class-tetk-helpers.php:439
+msgid "Theme Demo Import - "
+msgstr ""
+
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:159
 msgid ""
 "There are no predefined import files available in this theme. Please upload "
 "the import files manually!"
 msgstr ""
 
-#: inc/class-tetk-main.php:164
-msgid "Manually upload the demo files"
-msgstr ""
-
-#: inc/class-tetk-main.php:167
-msgid "Choose a XML file for content import:"
-msgstr ""
-
-#: inc/class-tetk-main.php:172
-msgid "Choose a WIE or JSON file for widget import:"
-msgstr ""
-
-#: inc/class-tetk-main.php:172 inc/class-tetk-main.php:177
-msgid "(*optional)"
-msgstr ""
-
-#: inc/class-tetk-main.php:177
-msgid "Choose a DAT file for customizer import:"
-msgstr ""
-
-#: inc/class-tetk-main.php:187
-msgid "Choose which demo you want to import:"
-msgstr ""
-
-#: inc/class-tetk-main.php:212
-msgid "Import preview:"
-msgstr ""
-
-#: inc/class-tetk-main.php:216 inc/class-tetk-main.php:271
-msgid "No preview image defined for this import."
-msgstr ""
-
-#: inc/class-tetk-main.php:239
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:239
 msgid "Click the button once and wait. The import process may take several minutes."
 msgstr ""
 
-#: inc/class-tetk-main.php:243
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:243
 msgid "Importing, please wait!"
 msgstr ""
 
-#: inc/class-tetk-main.php:328
-msgid "Manually uploaded files"
-msgstr ""
-
-#: inc/class-tetk-main.php:345 inc/class-tetk-main.php:356
-msgid "Downloaded files"
-msgstr ""
-
-#: inc/class-tetk-main.php:352
-msgid "The import files for: %s were successfully downloaded!"
-msgstr ""
-
-#: inc/class-tetk-main.php:362
-msgid "No import files specified!"
-msgstr ""
-
-#: inc/class-tetk-main.php:409
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:409
 msgid ""
 "%1$s%3$sThat's it, all done!%4$s%2$sThe demo import has finished. Please "
 "check your page and make sure that everything has imported correctly. If it "
 "did, you can deactivate the %3$sTheme Demo Import%4$s plugin.%5$s"
 msgstr ""
 
-#: inc/class-tetk-main.php:420
+#: svn-production/tags/1.0.0/inc/class-tetk-main.php:420
 msgid ""
 "%1$sThe demo import has finished, but there were some import "
 "errors.%2$sMore details about the errors can be found in this %3$s%5$slog "
 "file%6$s%4$s%7$s"
 msgstr ""
 
-#: inc/class-tetk-main.php:474
-msgid "Max execution time after content import = "
-msgstr ""
-
-#: inc/class-tetk-main.php:476
-msgid "Importing content"
-msgstr ""
-
-#: inc/class-tetk-main.php:515 inc/class-tetk-main.php:527
-msgid "Importing widgets"
-msgstr ""
-
-#: inc/class-tetk-main.php:549 inc/class-tetk-main.php:557
-msgid "Importing customizer settings"
-msgstr ""
-
-#: inc/class-tetk-main.php:555
-msgid "Customizer settings import finished!"
-msgstr ""
-
-#: inc/class-tetk-main.php:607
-msgid "Completed AJAX call number: "
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:44
-msgid "Widget import file could not be found."
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:76
-msgid "Widget import data could not be read. Please try a different file."
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:116
-msgid "Sidebar does not exist in theme (moving widget to Inactive)"
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:138
-msgid "Site does not support widget"
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:173
-msgid "Widget already exists"
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:232
-msgid "Imported"
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:236
-msgid "Imported to Inactive"
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:242
-msgid "No Title"
-msgstr ""
-
-#: inc/class-tetk-widget-importer.php:291
-msgid "No results for widget import!"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:130
-msgid "Could not open the file for parsing"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:166
-#: inc/importer/class-wxr-importer.php:282
-#: inc/importer/class-wxr-importer.php:355
-msgid ""
-"This WXR file (version %s) is newer than the importer (version %s) and may "
-"not be supported. Please consider updating."
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:504
-msgid "The file does not exist, please try again."
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:564
-msgid "Invalid author mapping"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:665
-msgid "Cannot import auto-draft posts"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:753
-msgid "Failed to import \"%s\": Invalid post type %s"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:763
-msgid "%s \"%s\" already exists."
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:841
-msgid "Skipping attachment \"%s\", fetching attachments disabled"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:855
-msgid "Failed to import \"%s\" (%s)"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:887
-#: inc/importer/class-wxr-importer.php:1705
-msgid "Imported \"%s\" (%s)"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:892
-msgid "Post %d remapped to %d"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1036
-msgid "Invalid file type"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1519
-msgid "Failed to import user \"%s\""
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1540
-msgid "Imported user \"%s\""
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1544
-msgid "User %d remapped to %d"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1681
-msgid "Failed to import %s %s"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1710
-msgid "Term %d remapped to %d"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1763
-msgid "Remote server returned %1$d %2$s for %3$s"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1776
-msgid "Remote file is incorrect size"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1781
-msgid "Zero size file downloaded"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1787
-msgid "Remote file is too large, limit is %s"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1809
-msgid "Running post-processing for post %d"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1822
-msgid "Could not find the post parent for \"%s\" (post #%d)"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1827
-msgid "Post %d was imported with parent %d, but could not be found"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1841
-msgid "Could not find the author for \"%s\" (post #%d)"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1846
-msgid "Post %d was imported with author \"%s\", but could not be found"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1872
-msgid "Post %d was marked for post-processing, but none was required."
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1883
-msgid "Could not update \"%s\" (post #%d) with mapped data"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1928
-msgid "Could not find the menu object for \"%s\" (post #%d)"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1933
-msgid ""
-"Post %d was imported with object \"%d\" of type \"%s\", but could not be "
-"found"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1955
-msgid "Could not find the comment parent for comment #%d"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1959
-msgid "Comment %d was imported with parent %d, but could not be found"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1973
-msgid "Could not find the author for comment #%d"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1977
-msgid "Comment %d was imported with author %d, but could not be found"
-msgstr ""
-
-#: inc/importer/class-wxr-importer.php:1994
-msgid "Could not update comment #%d with mapped data"
-msgstr ""
-
-#: themeegg-toolkit.php:29
+#: svn-production/tags/1.0.0/themeegg-toolkit.php:29
 msgid ""
 "The %2$sTheme Demo Import%3$s plugin requires %2$sPHP 5.3.2+%3$s to run "
 "properly. Please contact your hosting company and ask them to update the "
@@ -473,8 +859,13 @@ msgid ""
 "PHP: %2$s%1$s%3$s"
 msgstr ""
 
-#. Plugin Name of the plugin/theme
-msgid "ThemeEgg ToolKit"
+#: svn-production/tags/1.1.0/themeegg-toolkit.php:29
+#: svn-production/trunk/themeegg-toolkit.php:29 themeegg-toolkit.php:28
+msgid ""
+"The %2$sThemeEgg ToolKit%3$s plugin requires %2$sPHP 5.3.2+%3$s to run "
+"properly. Please contact your hosting company and ask them to update the "
+"PHP version of your site to at least PHP 5.3.2.%4$s Your current version of "
+"PHP: %2$s%1$s%3$s"
 msgstr ""
 
 #. Plugin URI of the plugin/theme
