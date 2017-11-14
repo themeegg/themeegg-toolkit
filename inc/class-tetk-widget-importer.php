@@ -225,7 +225,6 @@ class TETK_Widget_Importer {
 						'widget_id_num_old' => $instance_id_number,
 					);
 					do_action( 'themeegg-toolkit/widget_importer_after_single_widget_import', $after_widget_import );
-
 					// Success message.
 					if ( $sidebar_available ) {
 						$widget_message_type = 'success';

@@ -2,8 +2,8 @@
 Contributors: themeegg
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themeegg
 Requires at least: 4.0.0
-Tested up to: 4.8
-Stable tag: 1.1.0
+Tested up to: 4.9
+Stable tag: 1.1.1
 License: GPLv3 or later
 
 ToolKit for ThemeEgg themes and demo content importer for themes.
@@ -17,6 +17,9 @@ This plugin will create a page in **APPEARANCE > Import Demo Content**.
 If you are not using our(themeegg's) official theme, then you will be presented with three file upload inputs.
 
 This plugin is based off the 'One Click Demo Import' plugin by @capuderg and @cyman, https://github.com/proteusthemes/one-click-demo-import.
+
+== Importing Demo Tutorial ==
+[youtube https://www.youtube.com/watch?v=5uWh4PAKHRo&t=109s]
 
 == Installation ==
 
@@ -69,6 +72,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 == Screenshots ==
 
 == Changelog ==
+**1.1.1 - 14/11/2017**
+- Fix - minor importing issue resolved
 **1.1.0 - 11/1/2017**
 - Demo importer UI design optimize
 

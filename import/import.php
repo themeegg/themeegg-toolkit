@@ -1,5 +1,8 @@
 <?php
 
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
 function tetk_get_supported_themes() {
 
 	$supported_themes = array( 'Eggnews', 'Eggnews Pro' );
@@ -10,6 +13,10 @@ function tetk_get_supported_themes() {
 function TETK_import_files() {
 	$theme     = wp_get_theme(); // gets the current theme
 	$demo_urls = array();
+
+	$template_directory = get_template_directory_uri() . '/demo-content/';
+	$template_directory = 'https://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/';
+
 
 	if ( $theme == 'Eggnews' ) {
 
@@ -27,9 +34,9 @@ function TETK_import_files() {
 
 		$demo_urls[] = array(
 			'import_file_name'           => 'EggNews Pro',
-			'import_file_url'            => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/content.xml',
-			'import_widget_file_url'     => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/widgets.wie',
-			'import_customizer_file_url' => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/demo-content/customizer.dat',
+			'import_file_url'            => $template_directory . 'content.xml',
+			'import_widget_file_url'     => $template_directory . 'widgets.wie',
+			'import_customizer_file_url' => $template_directory . 'customizer.dat',
 			'import_preview_image_url'   => 'http://demo.themeegg.com/themes/eggnews-pro/wp-content/themes/eggnews-pro/screenshot.png',
 			'demo_url'                   => 'http://demo.themeegg.com/themes/eggnews-pro/',
 			//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
@@ -40,21 +47,13 @@ function TETK_import_files() {
 }
 
 function TETK_after_import_setup() {
-	// Assign menus to their locations.
-	$main_menu = get_term_by( 'name', 'Top Menu', 'nav_menu' );
+	$theme = wp_get_theme(); // gets the current theme
 
-	set_theme_mod( 'nav_menu_locations', array(
-			'primary-menu' => $main_menu->term_id,
-		)
-	);
-
-	// Assign front page and posts page (blog page).
-	$front_page_id = get_page_by_title( 'Home' );
-	$blog_page_id  = get_page_by_title( 'Blog' );
-
-	update_option( 'show_on_front', 'page' );
-	update_option( 'page_on_front', $front_page_id->ID );
-	update_option( 'page_for_posts', $blog_page_id->ID );
+	if ( $theme == 'Eggnews' ) {
+		require TETK_PATH . 'import/eggnews-after-setup.php';
+	} else if ( $theme == 'Eggnews Pro' ) {
+		require TETK_PATH . 'import/eggnews-pro-after-setup.php';
+	}
 
 }
 
