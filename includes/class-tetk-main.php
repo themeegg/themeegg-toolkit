@@ -48,25 +48,6 @@ class TETK_Main {
 		add_action( 'admin_enqueue_scripts', array( $this, 'admin_enqueue_scripts' ) );
 		add_action( 'wp_ajax_TETK_import_demo_data', array( $this, 'import_demo_data_ajax_callback' ) );
 		add_action( 'after_setup_theme', array( $this, 'setup_plugin_with_filter_data' ) );
-		add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
-	}
-
-
-	/**
-	 * Private clone method to prevent cloning of the instance of the *Singleton* instance.
-	 *
-	 * @return void
-	 */
-	private function __clone() {
-	}
-
-
-	/**
-	 * Private unserialize method to prevent unserializing of the *Singleton* instance.
-	 *
-	 * @return void
-	 */
-	private function __wakeup() {
 	}
 
 
@@ -193,9 +174,24 @@ class TETK_Main {
                     <div class="theme-browser rendered">
                         <div class="themes wp-clearfix">
 
-							<?php foreach ( $this->import_files as $index => $import_file ) : ?>
+							<?php
+							//delete_option( 'themeegg_themes');
+							$installed_demos = get_option( 'themeegg_themes', array() );
 
-                                <div class="theme">
+							$is_installed = false;
+							foreach ( $this->import_files as $index => $import_file ) :
+
+
+								$import_file_name = isset( $import_file['import_file_name'] ) ? $import_file['import_file_name'] : '';
+
+								if ( in_array( $import_file_name, $installed_demos ) ) {
+									$is_installed = true;
+								}
+
+
+								?>
+
+                                <div class="theme <?php echo $is_installed ? 'active' : '' ?>">
 
                                     <div class="theme-screenshot">
                                         <img src="<?php echo $import_file['import_preview_image_url'] ?>"
@@ -212,16 +208,40 @@ class TETK_Main {
 
                                     <div class="theme-id-container">
 
-                                        <h2 class="theme-name"><?php echo $import_file['import_file_name'] ?></h2>
+                                        <h2 class="theme-name"><?php
+											if ( $is_installed ) {
+
+												echo '<b>Imported</b> : ';
+											}
+											echo $import_file['import_file_name'] ?></h2>
 
                                         <div class="theme-actions">
-                                            <a class="button button-primary load-customize hide-if-no-customize js-tetk-import-data"
-                                               data-index="<?php echo $index; ?>"><?php esc_html_e( 'Import Demo', 'themeegg-toolkit' ); ?></a>
+											<?php
+											$href = '';
+											if ( $is_installed ) {
+
+												$href = ' href="' . $import_file['demo_url'] . '" target="_blank"';
+											}
+
+											?>
+                                            <a <?php echo $href; ?>
+                                                    class="button button-primary <?php echo ! $is_installed ? 'load-customize hide-if-no-customize js-tetk-import-data ' : ''; ?>"
+                                                    data-index="<?php echo $index; ?>">
+												<?php
+												if ( ! $is_installed ) {
+													esc_html_e( 'Import Demo', 'themeegg-toolkit' );
+												} else {
+													esc_html_e( 'Live Preview', 'themeegg-toolkit' );
+												}
+												?>
+                                            </a>
 
                                         </div>
                                     </div>
 
+
                                 </div>
+
 
 							<?php endforeach; ?>
                         </div>
@@ -319,6 +339,18 @@ class TETK_Main {
 	 * 6. after import setup (optional)
 	 */
 	public function import_demo_data_ajax_callback() {
+
+		/*
+				$action = 'tetk-after-demo-content-import';
+				//if ( ( false !== has_action( $action ) ) && empty( $this->frontend_error_messages ) ) {
+
+				// Run the after_import action to setup other settings.
+				$this->selected_index = empty( $_POST['selected'] ) ? 0 : absint( $_POST['selected'] );
+
+				$this->do_import_action( $action, $this->import_files[ $this->selected_index ] );
+
+				exit;*/
+		// Remove all above
 
 		// Try to update PHP memory limit (so that it does not run out of it).
 		ini_set( 'memory_limit', apply_filters( 'themeegg-toolkit/import_memory_limit', '350M' ) );
@@ -676,8 +708,7 @@ class TETK_Main {
 	/**
 	 * Get content importer data, so we can continue the import with this new AJAX request.
 	 */
-	private
-	function get_importer_data() {
+	private function get_importer_data() {
 		if ( $data = get_transient( 'TETK_importer_data' ) ) {
 			$this->frontend_error_messages = empty( $data['frontend_error_messages'] ) ? '' : $data['frontend_error_messages'];
 			$this->ajax_call_number        = empty( $data['ajax_call_number'] ) ? 1 : $data['ajax_call_number'];
@@ -690,14 +721,6 @@ class TETK_Main {
 		}
 
 		return false;
-	}
-
-	/**
-	 * Load the plugin textdomain, so that translations can be made.
-	 */
-	public
-	function load_textdomain() {
-		load_plugin_textdomain( 'themeegg-toolkit', false, plugin_basename( dirname( __FILE__ ) ) . '/i18n/languages' );
 	}
 
 

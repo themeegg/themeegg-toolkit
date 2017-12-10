@@ -25,7 +25,7 @@ abstract class TETK_Theme_Demo {
 
 	}
 
-	public static function after_import() {
+	public static function after_import($selected_import) {
 
 	}
 }

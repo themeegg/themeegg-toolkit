@@ -43,15 +43,27 @@ class TETK_Admin_Demo_Config {
 
 		return array(
 
-			'eggnews'     => array(
+			'eggnews'       => array(
 
 				'theme_name' => 'Eggnews',
 				'demo_class' => 'TETK_Theme_Demo_Eggnews',
 			),
-			'eggnews_pro' => array(
+			'eggnews_pro'   => array(
 
 				'theme_name' => 'Eggnews Pro',
 				'demo_class' => 'TETK_Theme_Demo_Eggnews_Pro',
+			),
+			'official_plus' => array(
+				'theme_name' => 'Official Plus',
+				'demo_class' => 'TETK_Theme_Demo_Official_Plus',
+			),
+			'miteri'        => array(
+				'theme_name' => 'Miteri',
+				'demo_class' => 'TETK_Theme_Demo_Miteri',
+			),
+			'miteri_pro'    => array(
+				'theme_name' => 'Miteri Pro',
+				'demo_class' => 'TETK_Theme_Demo_Miteri_Pro',
 			)
 		);
 
@@ -73,7 +85,7 @@ class TETK_Admin_Demo_Config {
 
 	}
 
-	public function after_import() {
+	public function after_import( $selected_import ) {
 
 
 		$import_class = $this->get_import_class();
@@ -84,7 +96,7 @@ class TETK_Admin_Demo_Config {
 			return '';
 		}
 
-		$import_class::after_import();
+		$import_class::after_import( $selected_import );
 	}
 }
 
