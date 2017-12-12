@@ -3,7 +3,7 @@ Contributors: themeegg
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themeegg
 Requires at least: 4.0.0
 Tested up to: 4.9
-Stable tag: 1.1.1
+Stable tag: 1.2.0
 License: GPLv3 or later
 
 ToolKit for ThemeEgg themes and demo content importer for themes.
@@ -68,10 +68,15 @@ You should have received a copy of the GNU General Public License along
 with this program; if not, write to the Free Software Foundation, Inc.,
 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
 
-
 == Screenshots ==
 
 == Changelog ==
+**1.2.0 - 12/12/2017**
+- Fix - eggnews demo content import issue fixed
+- Fix - WooCommerce demo issue fixed
+- Fix - Some functional issue resolved
+- Fix - Speed issue while importing demo issue resolved
+
 **1.1.1 - 14/11/2017**
 - Fix - minor importing issue resolved
 **1.1.0 - 11/1/2017**

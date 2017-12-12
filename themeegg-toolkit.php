@@ -3,7 +3,7 @@
 Plugin Name: ThemeEgg ToolKit
 Plugin URI: https://wordpress.org/plugins/themeegg-toolkit/
 Description: ToolKit for ThemeEgg themes and demo content importer for themes.
-Version: 1.1.1
+Version: 1.2.0
 Author: ThemeEgg
 Author URI: http://themeegg.com
 License: GPL3
