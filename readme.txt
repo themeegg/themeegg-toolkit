@@ -3,7 +3,7 @@ Contributors: themeegg
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themeegg
 Requires at least: 4.0.0
 Tested up to: 4.9
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv3 or later
 
 ToolKit for ThemeEgg themes and demo content importer for themes.
