@@ -177,10 +177,8 @@ class TETK_Main {
 							<?php
 							//delete_option( 'themeegg_themes');
 							$installed_demos = get_option( 'themeegg_themes', array() );
-
-							$is_installed = false;
 							foreach ( $this->import_files as $index => $import_file ) :
-
+								$is_installed = false;
 
 								$import_file_name = isset( $import_file['import_file_name'] ) ? $import_file['import_file_name'] : '';
 
