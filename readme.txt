@@ -3,7 +3,7 @@ Contributors: themeegg
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themeegg
 Requires at least: 4.0.0
 Tested up to: 4.9
-Stable tag: 1.2.1
+Stable tag: 1.2.2
 License: GPLv3 or later
 
 ToolKit for ThemeEgg themes and demo content importer for themes.
@@ -71,6 +71,10 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 == Screenshots ==
 
 == Changelog ==
+**1.2.2 - 02/24/2018**
+- Fix - miteri default demo
+- Fix - miteri corporate demo
+
 **1.2.0 - 12/12/2017**
 - Fix - eggnews demo content import issue fixed
 - Fix - WooCommerce demo issue fixed
