@@ -39,6 +39,7 @@ class TETK_Admin {
 	}
 
 	public function includes() {
+
 		include_once( dirname( __FILE__ ) . '/class-tetk-admin-demo-config.php' );
 	}
 }

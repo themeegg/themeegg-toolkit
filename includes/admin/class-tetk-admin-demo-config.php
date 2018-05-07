@@ -43,27 +43,35 @@ class TETK_Admin_Demo_Config {
 
 		return array(
 
-			'eggnews'       => array(
+			'eggnews'              => array(
 
 				'theme_name' => 'Eggnews',
 				'demo_class' => 'TETK_Theme_Demo_Eggnews',
 			),
-			'eggnews_pro'   => array(
+			'eggnews_pro'          => array(
 
 				'theme_name' => 'Eggnews Pro',
 				'demo_class' => 'TETK_Theme_Demo_Eggnews_Pro',
 			),
-			'official_plus' => array(
+			'official_plus'        => array(
 				'theme_name' => 'Official Plus',
 				'demo_class' => 'TETK_Theme_Demo_Official_Plus',
 			),
-			'miteri'        => array(
+			'miteri'               => array(
 				'theme_name' => 'Miteri',
 				'demo_class' => 'TETK_Theme_Demo_Miteri',
 			),
-			'miteri_pro'    => array(
+			'miteri_pro'           => array(
 				'theme_name' => 'Miteri Pro',
 				'demo_class' => 'TETK_Theme_Demo_Miteri_Pro',
+			),
+			'education_master'     => array(
+				'theme_name' => 'Education Master',
+				'demo_class' => 'TETK_Theme_Demo_Education_Master',
+			),
+			'education_master_pro' => array(
+				'theme_name' => 'Education Master Pro',
+				'demo_class' => 'TETK_Theme_Demo_Education_Master_Pro',
 			)
 		);
 
