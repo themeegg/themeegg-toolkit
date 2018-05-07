@@ -8,14 +8,14 @@ class TETK_Theme_Demo_Education_Master_Pro extends TETK_Theme_Demo {
 
 	public static function import_files() {
 
-		$server_url = 'https://demo.themeegg.com/themes/education-master/';
+		$server_url = 'https://demo.themeegg.com/themes/education-master-pro/';
 		$demo_urls  = array(
 			array(
-				'import_file_name'           => 'Education Master',
-				'import_file_url'            => $server_url . 'wp-content/themes/education-master/demo-content/default/content.xml',
-				'import_widget_file_url'     => $server_url . 'wp-content/themes/education-master/demo-content/default/widgets.wie',
-				'import_customizer_file_url' => $server_url . 'wp-content/themes/education-master/demo-content/default/customizer.dat',
-				'import_preview_image_url'   => $server_url . 'wp-content/themes/education-master/demo-content/default/screenshot.png',
+				'import_file_name'           => 'Education Master Pro',
+				'import_file_url'            => $server_url . 'wp-content/themes/education-master-pro/demo-content/content.xml',
+				'import_widget_file_url'     => $server_url . 'wp-content/themes/education-master-pro/demo-content/widgets.wie',
+				'import_customizer_file_url' => $server_url . 'wp-content/themes/education-master-pro/demo-content/customizer.dat',
+				'import_preview_image_url'   => $server_url . 'wp-content/themes/education-master-pro/screenshot.png',
 				'demo_url'                   => $server_url . '',
 				//'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
 			)
@@ -27,8 +27,11 @@ class TETK_Theme_Demo_Education_Master_Pro extends TETK_Theme_Demo {
 	}
 
 	public static function after_import( $selected_import ) {
-		$installed_demos  = get_option( 'themeegg_themes', array() );
+
+		$installed_demos = get_option( 'themeegg_themes', array() );
+
 		$import_file_name = isset( $selected_import['import_file_name'] ) ? $selected_import['import_file_name'] : '';
+
 		if ( ! empty( $import_file_name ) ) {
 			array_push( $installed_demos, $import_file_name );
 		}
@@ -39,7 +42,9 @@ class TETK_Theme_Demo_Education_Master_Pro extends TETK_Theme_Demo {
 
 		$new_theme_locations = get_registered_nav_menus();
 
+
 		$nav_menus = array();
+
 
 		foreach ( $new_theme_locations as $location_key => $location ) {
 
@@ -50,157 +55,59 @@ class TETK_Theme_Demo_Education_Master_Pro extends TETK_Theme_Demo {
 				$nav_menus[ $location_key ] = $menu->term_id;
 			}
 		}
+
 		if ( count( $nav_menus ) > 0 ) {
 			set_theme_mod( 'nav_menu_locations', $nav_menus );
 		}
-
-// Assign front page and posts page (blog page).
-		$front_page_id    = get_page_by_title( 'Home' );
-		$blog_page_id     = get_page_by_title( 'Blog' );
-		$blog_category_id = get_cat_ID( 'Blog' );
+		// Assign front page and posts page (blog page).
+		$front_page_id = get_page_by_title( 'Home Page' );
+		$blog_page_id  = get_page_by_title( 'Blog' );
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $front_page_id->ID );
 		update_option( 'page_for_posts', $blog_page_id->ID );
 		update_option( 'themeegg_themes', $installed_demos );
 
-		switch ( $import_file_name ) {
-			case 'Miteri Default':
-				$menu_locations = get_nav_menu_locations();
 
-				$menu_id = isset( $menu_locations['main_menu'] ) ? $menu_locations['main_menu'] : '-1';
-
-				$main_navigation = wp_get_nav_menu_items( $menu_id );
-
-				$home_menu_obj = array_filter( $main_navigation, function ( $var ) {
-					return ( isset( $var->title ) && $var->title == 'Home' );
-				} );
-				$home_menu_id  = isset( $home_menu_obj[0] ) ? $home_menu_obj[0]->ID : 0;
-
-				update_post_meta( $home_menu_id, 'te_mega_menu_cat', $blog_category_id );
-
-				// Feature Slider Widget
-				$feature_slider           = get_option( 'widget_miteri_featured_slider' );
-				$miteri_slider_category   = get_cat_ID( 'Blog' );
-				$miteri_featured_category = get_cat_ID( 'International' );
-				foreach ( $feature_slider as $slider_key => $slider ) {
-					$feature_slider[ $slider_key ]['miteri_slider_category']   = $miteri_slider_category;
-					$feature_slider[ $slider_key ]['miteri_featured_category'] = $miteri_featured_category;
-				}
-				update_option( 'widget_miteri_featured_slider', $feature_slider );
-
-				// Timeline widget
-				$timeline_widget      = get_option( 'widget_miteri_timeline_widget' );
-				$miteri_post_category = get_cat_ID( 'Technology' );
-				foreach ( $timeline_widget as $timeline_key => $timeline ) {
-					$timeline_widget[ $timeline_key ]['miteri_post_category'] = $miteri_post_category;
-				}
-				update_option( 'widget_miteri_timeline_widget', $timeline_widget );
-
-				// Partner widget
-				$logo_widget          = get_option( 'widget_miteri_logo_slider' );
-				$miteri_logo_category = get_cat_ID( 'Our Partners' );
-				foreach ( $logo_widget as $logo_key => $logo ) {
-					$logo_widget[ $logo_key ]['miteri_logo_category'] = $miteri_logo_category;
-				}
-				update_option( 'widget_miteri_logo_slider', $logo_widget );
-
-				// Latest News widget
-				$post_grid_widget    = get_option( 'widget_miteri_post_grid' );
-				$miteri_block_cat_id = get_cat_ID( 'Blog' );
-				foreach ( $post_grid_widget as $post_grid_key => $grid ) {
-					$post_grid_widget[ $post_grid_key ]['miteri_block_cat_id'] = $miteri_block_cat_id;
-				}
-				update_option( 'widget_miteri_post_grid', $post_grid_widget );
-				break;
-
-			case 'Miteri Blog':
-				// Feature Slider Widget
-				$feature_slider           = get_option( 'widget_miteri_featured_slider' );
-				$miteri_slider_category   = get_cat_ID( 'Mobile' );
-				$miteri_featured_category = get_cat_ID( 'Technology' );
-				foreach ( $feature_slider as $slider_key => $slider ) {
-					$feature_slider[ $slider_key ]['miteri_slider_category']   = $miteri_slider_category;
-					$feature_slider[ $slider_key ]['miteri_featured_category'] = $miteri_featured_category;
-				}
-				update_option( 'widget_miteri_featured_slider', $feature_slider );
-
-				// Timeline widget
-				$timeline_widget      = get_option( 'widget_miteri_timeline_widget' );
-				$miteri_post_category = get_cat_ID( 'Mobile' );
-				foreach ( $timeline_widget as $timeline_key => $timeline ) {
-					$timeline_widget[ $timeline_key ]['miteri_post_category'] = $miteri_post_category;
-				}
-				update_option( 'widget_miteri_timeline_widget', $timeline_widget );
-
-				// Alternative widget
-				$alternative_widget  = get_option( 'widget_miteri_alternative_post' );
-				$miteri_block_cat_id = get_cat_ID( 'Mobile' );
-				foreach ( $alternative_widget as $alternative_key => $alternative ) {
-					$alternative_widget[ $alternative_key ]['miteri_block_cat_id'] = $miteri_block_cat_id;
-				}
-				update_option( 'widget_miteri_alternative_post', $alternative_widget );
-
-				// Block Posts
-				$post_grid_widget    = get_option( 'widget_miteri_post_grid' );
-				$miteri_block_cat_id = get_cat_ID( 'Mobile' );
-				foreach ( $post_grid_widget as $post_grid_key => $grid ) {
-					$post_grid_widget[ $post_grid_key ]['miteri_block_cat_id'] = $miteri_block_cat_id;
-				}
-				update_option( 'widget_miteri_post_grid', $post_grid_widget );
-
-
-				// Recent Posts
-				$miteri_block_layout = get_option( 'widget_miteri_block_layout' );
-				$miteri_block_cat_id = get_cat_ID( 'Technology' );
-				foreach ( $miteri_block_layout as $block_key => $block ) {
-					$miteri_block_layout[ $block_key ]['miteri_block_cat_id'] = $miteri_block_cat_id;
-				}
-				update_option( 'widget_miteri_block_layout', $miteri_block_layout );
-				break;
-
-			case 'Miteri Corporate':
-				// Feature Slider Widget
-				$feature_slider         = get_option( 'widget_miteri_banner' );
-				$miteri_slider_category = get_cat_ID( 'Business' );
-				foreach ( $feature_slider as $slider_key => $slider ) {
-					if ( ! empty( $miteri_slider_category ) ) {
-						$feature_slider[ $slider_key ]['miteri_slider_category'] = $miteri_slider_category;
-					}
-				}
-				update_option( 'widget_miteri_banner', $feature_slider );
-
-				// Features widget
-				$feature_widget          = get_option( 'widget_miteri_features' );
-				$miteri_feature_category = get_cat_ID( 'Features' );
-				foreach ( $feature_widget as $feature_key => $feature ) {
-					$feature_widget[ $feature_key ]['miteri_block_cat_id'] = $miteri_feature_category;
-				}
-				update_option( 'widget_miteri_features', $feature_widget );
-
-				// Alternative Post Widget
-				$alternative_widget  = get_option( 'widget_miteri_alternative_post', array() );
-				$miteri_block_cat_id = get_cat_ID( 'Business' );
-				foreach ( $alternative_widget as $alternative_key => $alternative ) {
-					$alternative_widget[ $alternative_key ]['miteri_block_cat_id'] = $miteri_block_cat_id;
-				}
-				update_option( 'widget_miteri_alternative_post', $alternative_widget );
-
-				// Portfolio Widget
-				$portfolio_widget = get_option( 'widget_miteri_portfolio' );
-				$business_cat     = get_cat_ID( 'Business' );
-				$news_cat         = get_cat_ID( 'News' );
-				$technology_cat   = get_cat_ID( 'Technology' );
-				foreach ( $portfolio_widget as $slider_key => $slider ) {
-					$portfolio_widget[ $slider_key ]['portofolio_categories'][0] = $business_cat;
-					$portfolio_widget[ $slider_key ]['portofolio_categories'][1] = $news_cat;
-					$portfolio_widget[ $slider_key ]['portofolio_categories'][2] = $technology_cat;
-				}
-				update_option( 'widget_miteri_portfolio', $portfolio_widget );
-				break;
-
-			default:
-
+		// Our Team
+		$team_options     = get_option( 'widget_education-master-our-team' );
+		$cat              = get_term_by( 'name', 'OurTeacher', 'team-categories' );
+		$team_category_id = 0;
+		if ( $cat ) {
+			$team_category_id = $cat->term_id;
 		}
+
+		foreach ( $team_options as $key => $value ) {
+			$team_options[ $key ]['post_category'] = $team_category_id;
+		}
+		update_option( 'widget_education-master-our-team', $team_options );
+
+		// Carousel
+		$carousel_widget_option = get_option( 'widget_education_master_carousel' );
+		$event_id               = get_cat_ID( 'Event' );
+		$school_id              = get_cat_ID( 'School' );
+		foreach ( $carousel_widget_option as $key => $value ) {
+			$carousel_widget_option[ $key ]['block_cat_ids'][ $event_id ]  = 1;
+			$carousel_widget_option[ $key ]['block_cat_ids'][ $school_id ] = 1;
+		}
+		update_option( 'widget_education_master_carousel', $carousel_widget_option );
+
+		// Feature Posts
+		$feature_posts_options = get_option( 'widget_education_master_featured_posts' );
+		foreach ( $feature_posts_options as $key => $value ) {
+			$feature_posts_options[ $key ]['block_cat_ids'][ $event_id ]  = 1;
+			$feature_posts_options[ $key ]['block_cat_ids'][ $school_id ] = 1;
+		}
+		update_option( 'widget_education_master_featured_posts', $feature_posts_options );
+
+
+		// Education Master Timeline
+		$timeline_options = get_option( 'widget_education-master-timeline' );
+		$timeline_id      = get_cat_ID( 'Timeline' );
+		foreach ( $timeline_options as $time_key => $time_value ) {
+			$timeline_options[ $time_key ]['post_category'] = $timeline_id;
+		}
+		update_option( 'widget_education-master-timeline', $timeline_options );
+
 	}
 }
 
