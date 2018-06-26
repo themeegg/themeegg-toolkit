@@ -39,7 +39,7 @@ class TETK_Theme_Demo_Builder_Plus extends TETK_Theme_Demo
                 'import_file_name' => 'Builder Plus Restaurant',
                 'import_file_url' => $server_url . '/wp-content/demo-content/restaurant/content.xml',
                 'import_widget_file_url' => $server_url . '/wp-content/demo-content/restaurant/widgets.wie',
-                'import_customizer_file_url' => $server_url . 'demo-content/restaurant/customizer.dat',
+                'import_customizer_file_url' => $server_url . '/wp-content/demo-content/restaurant/customizer.dat',
                 'import_preview_image_url' => $server_url . '/wp-content/demo-content/restaurant/screenshot.png',
                 'demo_url' => $server_url . '/restaurant',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
