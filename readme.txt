@@ -71,6 +71,10 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 == Screenshots ==
 
 == Changelog ==
+**1.2.4 - 06/26/2018**
+- Added - Builder Lite demo
+- Added - Builder Plus Demo
+- Fix - Minor bug fixes
 **1.2.3 - 05/07/2018**
 - Fix - Miteri demo issue fixed
 - Added - Education master free/pro demo file added
