@@ -9,32 +9,31 @@ class TETK_Theme_Demo_Builder_Plus extends TETK_Theme_Demo
 
     public static function import_files()
     {
-
-        $server_url = 'https://demo.themeegg.com/themes/builder-plus/wp-content/';
+        $server_url = 'https://demo.themeegg.com/themes/builder-plus';
         $demo_urls = array(
             array(
                 'import_file_name' => 'Builder Plus Default',
-                'import_file_url' => $server_url . 'demo-content/default/content.xml',
-                'import_widget_file_url' => $server_url . 'demo-content/default/widgets.wie',
-                'import_customizer_file_url' => $server_url . 'demo-content/default/customizer.dat',
-                'import_preview_image_url' => $server_url . 'demo-content/default/screenshot.png',
-                'demo_url' => $server_url . 'default',
+                'import_file_url' => $server_url . '/wp-content/demo-content/default/content.xml',
+                'import_widget_file_url' => $server_url . '/wp-content/demo-content/default/widgets.wie',
+                'import_customizer_file_url' => $server_url . '/wp-content/demo-content/default/customizer.dat',
+                'import_preview_image_url' => $server_url . '/wp-content/demo-content/default/screenshot.png',
+                'demo_url' => $server_url . '/default',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             ), array(
                 'import_file_name' => 'Builder Plus Education',
-                'import_file_url' => $server_url . 'demo-content/education/content.xml',
-                'import_widget_file_url' => $server_url . 'demo-content/education/widgets.wie',
-                'import_customizer_file_url' => $server_url . 'demo-content/education/customizer.dat',
-                'import_preview_image_url' => $server_url . 'demo-content/education/screenshot.png',
-                'demo_url' => $server_url . 'study',
+                'import_file_url' => $server_url . '/wp-content/demo-content/education/content.xml',
+                'import_widget_file_url' => $server_url . '/wp-content/demo-content/education/widgets.wie',
+                'import_customizer_file_url' => $server_url . '/wp-content/demo-content/education/customizer.dat',
+                'import_preview_image_url' => $server_url . '/wp-content/demo-content/education/screenshot.png',
+                'demo_url' => $server_url . '/study',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             ), array(
                 'import_file_name' => 'Builder Plus Construction',
-                'import_file_url' => $server_url . 'demo-content/construction/content.xml',
-                'import_widget_file_url' => $server_url . 'demo-content/construction/widgets.wie',
-                'import_customizer_file_url' => $server_url . 'demo-content/construction/customizer.dat',
-                'import_preview_image_url' => $server_url . 'demo-content/construction/screenshot.png',
-                'demo_url' => $server_url . 'construction',
+                'import_file_url' => $server_url . '/wp-content/demo-content/construction/content.xml',
+                'import_widget_file_url' => $server_url . '/wp-content/demo-content/construction/widgets.wie',
+                'import_customizer_file_url' => $server_url . '/wp-content/demo-content/construction/customizer.dat',
+                'import_preview_image_url' => $server_url . '/wp-content/demo-content/construction/screenshot.png',
+                'demo_url' => $server_url . '/construction',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             ), array(
                 'import_file_name' => 'Builder Plus Restaurant',
@@ -42,7 +41,7 @@ class TETK_Theme_Demo_Builder_Plus extends TETK_Theme_Demo
                 'import_widget_file_url' => $server_url . 'demo-content/restaurant/widgets.wie',
                 'import_customizer_file_url' => $server_url . 'demo-content/restaurant/customizer.dat',
                 'import_preview_image_url' => $server_url . 'demo-content/restaurant/screenshot.png',
-                'demo_url' => $server_url . 'restaurant',
+                'demo_url' => $server_url . '/restaurant',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             )
         );
@@ -56,7 +55,7 @@ class TETK_Theme_Demo_Builder_Plus extends TETK_Theme_Demo
 
         $installed_demos = get_option('themeegg_themes', array());
         $import_file_name = isset($selected_import['import_file_name']) ? $selected_import['import_file_name'] : '';
-         if (!empty($import_file_name)) {
+        if (!empty($import_file_name)) {
             array_push($installed_demos, $import_file_name);
         }
 

@@ -9,15 +9,14 @@ class TETK_Theme_Demo_Builder_Lite extends TETK_Theme_Demo
 
     public static function import_files()
     {
-
-        $server_url = 'https://demo.themeegg.com/themes/builder-lite/wp-content/';
+        $server_url = 'https://demo.themeegg.com/themes/builder-lite';
         $demo_urls = array(
             array(
                 'import_file_name' => 'Builder Lite Default',
-                'import_file_url' => $server_url . 'demo-content/default/content.xml',
-                'import_widget_file_url' => $server_url . 'demo-content/default/widgets.wie',
-                'import_customizer_file_url' => $server_url . 'demo-content/default/customizer.dat',
-                'import_preview_image_url' => $server_url . 'demo-content/default/screenshot.png',
+                'import_file_url' => $server_url . '/wp-content/demo-content/default/content.xml',
+                'import_widget_file_url' => $server_url . '/wp-content/demo-content/default/widgets.wie',
+                'import_customizer_file_url' => $server_url . '/wp-content/demo-content/default/customizer.dat',
+                'import_preview_image_url' => $server_url . '/wp-content/demo-content/default/screenshot.png',
                 'demo_url' => $server_url . '',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             )
