@@ -25,7 +25,7 @@ final class Themeegg_Toolkit {
 	 *
 	 * @var string
 	 */
-	public $version = '1.2.4';
+	public $version = '1.2.5';
 
 	/**
 	 * The single instance of the class.
