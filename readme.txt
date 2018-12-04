@@ -3,7 +3,7 @@ Contributors: themeegg
 Tags: demo, content, widgets, menus, import, content, demo, data, widgets, settings, themeegg
 Requires at least: 4.0.0
 Tested up to: 4.9.6
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv3 or later
 
 ToolKit for ThemeEgg themes and demo content importer for themes.
@@ -71,6 +71,8 @@ with this program; if not, write to the Free Software Foundation, Inc.,
 == Screenshots ==
 
 == Changelog ==
+**1.2.6 - 12/04/2018**
+- Added - MultiCommerce free/pro demo
 **1.2.5 - 06/27/2018**
 - Added - Builder Lite 5 demos
 **1.2.4 - 06/26/2018**

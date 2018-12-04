@@ -83,6 +83,12 @@ class TETK_Admin_Demo_Config
             ), 'builder-plus' => array(
                 'theme_name' => 'Builder Plus',
                 'demo_class' => 'TETK_Theme_Demo_Builder_Plus',
+            ), 'multicommerce' => array(
+                'theme_name' => 'Multicommerce',
+                'demo_class' => 'TETK_Theme_Demo_Multicommerce',
+            ), 'builder-plus' => array(
+                'theme_name' => 'Multicommerce Pro',
+                'demo_class' => 'TETK_Theme_Demo_Multicommerce_Pro',
             )
         );
 
