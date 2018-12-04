@@ -12,12 +12,12 @@ class TETK_Theme_Demo_Multicommerce extends TETK_Theme_Demo
         $server_url = 'https://demo.themeegg.com/themes/multicommerce';
         $demo_urls = array(
             array(
-                'import_file_name' => 'MultiCommerce Default',
+                'import_file_name' => 'Multicommerce Default',
                 'import_file_url' => $server_url . '/wp-content/demo-content/default/content.xml',
                 'import_widget_file_url' => $server_url . '/wp-content/demo-content/default/widgets.wie',
                 'import_customizer_file_url' => $server_url . '/wp-content/demo-content/default/customizer.dat',
                 'import_preview_image_url' => $server_url . '/wp-content/demo-content/default/screenshot.png',
-                'demo_url' => $server_url . '/default',
+                'demo_url' => $server_url . '/',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             )
         );

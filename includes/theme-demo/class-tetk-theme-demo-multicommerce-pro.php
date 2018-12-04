@@ -17,7 +17,7 @@ class TETK_Theme_Demo_Multicommerce_Pro extends TETK_Theme_Demo
                 'import_widget_file_url' => $server_url . '/wp-content/demo-content/default/widgets.wie',
                 'import_customizer_file_url' => $server_url . '/wp-content/demo-content/default/customizer.dat',
                 'import_preview_image_url' => $server_url . '/wp-content/demo-content/default/screenshot.png',
-                'demo_url' => $server_url . '/default',
+                'demo_url' => $server_url . '/',
                 //'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             )
         );
