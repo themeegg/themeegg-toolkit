@@ -89,6 +89,9 @@ class TETK_Admin_Demo_Config
             ), 'multicommerce_pro' => array(
                 'theme_name' => 'Multicommerce Pro',
                 'demo_class' => 'TETK_Theme_Demo_Multicommerce_Pro',
+            ), 'newsportal_magazine' => array(
+                'theme_name' => 'Newsportal Magazine',
+                'demo_class' => 'TETK_Theme_Demo_Newsportal_Magazine',
             )
         );
 
